@@ -1,4 +1,16 @@
-# antlr-vensim Vensim grammar in ANTLR 4
+# antlr4-vensim Vensim grammar in ANTLR 4
+
+## Using the parser
+
+Install the package with npm in your project.
+~~~
+npm install antlr4-vensim
+~~~
+
+Require the lexer, parser, and/or visitor.
+~~~
+const { ModelLexer, ModelParser, ModelVisitor } = require('antlr4-vensim')
+~~~
 
 ## Installing tools
 
@@ -45,3 +57,11 @@ Run the lexer on the .mdl file to print the token stream.
 Usage: tree mdl-filename
 
 Run the parser on the .mdl file to print the parse tree.
+
+## npm scripts
+
+The main development activity is to build the parser after modifying the grammar. You can do this from the project root directory with npm.
+~~~
+npm run clean
+npm run build
+~~~
