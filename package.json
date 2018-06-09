@@ -1,0 +1,22 @@
+{
+  "name": "antlr4-vensim",
+  "version": "0.4.2",
+  "description": "Vensim grammar built in ANTLR 4",
+  "scripts": {
+    "build": "rm -rf parser && cd tools && ./build && cd ..",
+    "clean": "rm -rf java"
+  },
+  "main": "index.js",
+  "author": "Todd Fincannon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToddFincannon/antlr4-vensim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ToddFincannon/antlr4-vensim/issues"
+  },
+  "dependencies": {
+    "antlr4": "4.7.1"
+  }
+}
