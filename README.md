@@ -12,6 +12,8 @@ Require the lexer, parser, and/or visitor.
 const { ModelLexer, ModelParser, ModelVisitor } = require('antlr4-vensim')
 ~~~
 
+Refer to the [ANTLR 4 JavaScript](https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md) notes for further details about using the parser.
+
 ## Installing tools
 
 The grammar development tools in this package require macOS. They are not required to use the parser.
