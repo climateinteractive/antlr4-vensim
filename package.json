@@ -3,8 +3,7 @@
   "version": "0.4.2",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
-    "build": "rm -rf parser && cd tools && ./build && cd ..",
-    "clean": "rm -rf java"
+    "build": "rm -rf parser && cd tools && ./build && cd .."
   },
   "main": "index.js",
   "author": "Todd Fincannon",
@@ -18,5 +17,9 @@
   },
   "dependencies": {
     "antlr4": "4.7.1"
+  },
+  "devDependencies": {
+    "bufx": "^1.0.0",
+    "get-stdin": "^6.0.0"
   }
 }

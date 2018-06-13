@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-antlr4='java -jar /usr/local/lib/antlr-4.7.1-complete.jar'
-grun='java org.antlr.v4.gui.TestRig'
-rm -rf ../java
-$antlr4 -no-visitor -no-listener -Xexact-output-dir -o ../java ../grammar/Model.g4
-javac ../java/*.java
-pushd ../java >/dev/null
-$grun Model model -tree $1
-popd >/dev/null

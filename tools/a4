@@ -1,0 +1,70 @@
+#!/usr/bin/env sh
+TOOLS_DIR=$(pwd)
+ANTLR_VERSION=4.7.1
+antlr4="java -jar /usr/local/lib/antlr-$ANTLR_VERSION-complete.jar"
+grun='java org.antlr.v4.gui.TestRig'
+help() {
+  echo 'usage: a4 <command>'
+  echo 'a4 clean'
+  echo 'a4 [-g] tokens'
+  echo 'a4 [-g] lex <model-file-pathname>'
+  echo 'a4 [-g] tree <model-file-pathname>'
+  echo '-g generates the lexer and parser first'
+  exit
+}
+realpath() {
+  [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+clean() {
+  rm -rf ../java
+}
+generate() {
+  clean
+  $antlr4 -no-visitor -no-listener -Xexact-output-dir -o ../java ../grammar/Model.g4
+  javac ../java/*.java
+}
+tokens() {
+  cat ../java/Model.tokens
+}
+lex() {
+  $grun Model model -tokens $1
+}
+tree() {
+  $grun Model model -tree $1 | $TOOLS_DIR/print-tree
+}
+# With no arguments or -h, print usage and exit.
+if [ "$#" = "0" -o "$1" = "-h" ]; then
+  help
+fi
+# Clean  files built by dev tools.
+if [ "$1" = "clean" ]; then
+  clean
+  exit
+fi
+# The remaining commands optionally build the parser first.
+if [ "$1" = "-g" ]; then
+  generate
+  shift
+fi
+# The tokens command lists lexer tokens and does not need a model file.
+if [ "$1" = "tokens" ]; then
+  tokens
+fi
+# The remaining commands need a model file.
+if [ "$#" -lt "2" ]; then
+  help
+fi
+if [ "$1" = "lex" -o "$1" = "tree" ]; then
+  # Resolve the absolute pathname of the model file.
+  mdl=$(realpath "$2")
+  # Run the lexer or parser in the java directory and display the result.
+  pushd ../java >/dev/null
+  if [ "$1" = "lex" ]; then
+    lex "$mdl"
+  elif [ "$1" = "tree" ]; then
+    tree "$mdl"
+  fi
+  popd >/dev/null
+else
+  help
+fi
