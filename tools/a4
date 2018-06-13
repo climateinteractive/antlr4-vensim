@@ -25,6 +25,7 @@ generate() {
 }
 tokens() {
   cat ../java/Model.tokens
+  exit
 }
 lex() {
   $grun Model model -tokens $1
