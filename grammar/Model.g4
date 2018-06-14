@@ -10,18 +10,15 @@ subscriptSequence : '(' Id '-' Id ')' ;
 subscriptMapping : '->' ( Id | '(' Id ':' subscriptList ')' ) ;
 
 // An equation has a left-hand side and a right-hand side.
-// Typically, the RHS is a formula expression or constant list.
-// A Vensim lookup is simply a vector or array of data.
+// The RHS is a formula expression, a constant list, or a Vensim lookup.
 // The RHS is empty for data equations.
 equation : lhs ( ( ':=' | '==' | '=' ) ( expr | constList ) | lookup )? ;
-
 lhs : Id ( '[' subscriptList ']' )? ;
-constList : expr ( ',' expr )* ;
 
 // The lexer strips some tokens we are not interested in.
 // The character encoding is given at the start of a Vensim file.
-// Line continuation characters don't matter to us because we skip whitepace.
 // The units and documentation sections and group markings are skipped for now.
+// Line continuation characters must be stripped by a preprocessor.
 Encoding : '{' [A-Za-z0-9-]+ '}' -> skip ;
 UnitsDoc : '~' .*? '|' -> skip ;
 Group : '****' .*? '|' -> skip ;

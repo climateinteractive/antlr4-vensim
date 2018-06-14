@@ -48,12 +48,6 @@ ModelVisitor.prototype.visitLhs = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ModelParser#constList.
-ModelVisitor.prototype.visitConstList = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
 // Visit a parse tree produced by ModelParser#Call.
 ModelVisitor.prototype.visitCall = function(ctx) {
   return this.visitChildren(ctx);
@@ -188,6 +182,12 @@ ModelVisitor.prototype.visitLookupPointList = function(ctx) {
 
 // Visit a parse tree produced by ModelParser#lookupPoint.
 ModelVisitor.prototype.visitLookupPoint = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ModelParser#constList.
+ModelVisitor.prototype.visitConstList = function(ctx) {
   return this.visitChildren(ctx);
 };
 
