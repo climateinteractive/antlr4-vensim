@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const getStdin = require('get-stdin')
 const B = require('bufx')
 

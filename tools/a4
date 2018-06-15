@@ -27,10 +27,10 @@ tokens() {
   cat ../java/Model.tokens
 }
 lex() {
-  $grun Model model -tokens $1
+  $grun Model model -tokens $1 | node $TOOLS_DIR/print-tokens.js
 }
 tree() {
-  $grun Model model -tree $1 | $TOOLS_DIR/print-tree
+  $grun Model model -tree $1 | node $TOOLS_DIR/print-tree.js
 }
 # With no arguments or the usual help args, print usage and exit.
 if [ "$#" = "0" -o "$1" = "-h" -o "$1" = "help" -o "$1" = "--help" ]; then
