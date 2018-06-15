@@ -3,7 +3,7 @@
   "version": "0.4.2",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
-    "build": "rm -rf parser && cd tools && ./build && cd .."
+    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.7.1-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
   },
   "main": "index.js",
   "author": "Todd Fincannon",

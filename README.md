@@ -12,7 +12,7 @@ Require the lexer, parser, and/or visitor.
 const { ModelLexer, ModelParser, ModelVisitor } = require('antlr4-vensim')
 ~~~
 
-Refer to the [ANTLR 4 JavaScript](https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md) notes for further details about using the parser.
+Refer to the [ANTLR 4 JavaScript](https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md) runtime documentation for further details about using the parser.
 
 ## Installing tools
 
@@ -33,37 +33,50 @@ Set up ANTLR 4 in `.bash_profile`.
 export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
 ~~~
 
-## Command line utilities
+## Developing the parser
 
-These scripts generate a lexer and parser in Java. They are useful in development when you are trying to understand how the lexer is tokenizing your model and what parse tree the parser is generating.
+Build the parser after modifying the grammar.
+~~~
+npm run build
+~~~
 
-### build
-
-Usage: build
-
-Generate a Vensim parser in JavaScript in the `parser` directory.
+The build process generates a Vensim parser in JavaScript in the `parser` directory.
 ~~~
 ModelLexer.js
 ModelParser.js
 ModelVisitor.js
 ~~~
 
+## Command line utility
+
+The `a4` script generates and runs a lexer and parser in Java. It is useful in development when you are trying to understand how the lexer is tokenizing your model and what parse tree the parser is generating.
+
+### generate
+~~~
+./a4 generate
+~~~
+Generate the parser in Java (not JavaScript) in the `java` directory.
+
 ### lex
-
-Usage: lex mdl-filename
-
-Run the lexer on the .mdl file to print the token stream.
+~~~
+./a4 lex <mdl-file-pathname>
+~~~
+Run the lexer on the .mdl file to print the token stream. The generate command must be run first.
 
 ### tree
-
-Usage: tree mdl-filename
-
-Run the parser on the .mdl file to print the parse tree.
-
-## npm scripts
-
-The main development activity is to build the parser after modifying the grammar. You can do this from the project root directory with npm.
 ~~~
-npm run clean
-npm run build
+./a4 tree <mdl-file-pathname>
 ~~~
+Run the parser on the .mdl file to print the parse tree. The generate command must be run first.
+
+### clean
+~~~
+./a4 clean
+~~~
+Clean out the generated parser files in the `java` directory.
+
+### tokens
+~~~
+./a4 tokens
+~~~
+Print the lexer token list.
