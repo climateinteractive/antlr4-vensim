@@ -25,7 +25,7 @@ lookup : '(' lookupRange? lookupPointList ')' ;
 lookupRange : '[' lookupPoint '-' lookupPoint ']' ',' ;
 lookupPointList : lookupPoint (',' lookupPoint)* ;
 lookupPoint : '(' expr ',' expr ')' ;
-constList : expr ( (','|';') expr )* ;
+constList : ( expr ( ',' expr )+ | (expr ',' expr ';')+);
 
 Star : '*' ;
 Div : '/' ;
