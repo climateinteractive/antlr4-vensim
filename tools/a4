@@ -27,6 +27,7 @@ tokens() {
   cat ../java/Model.tokens
 }
 lex() {
+  # $grun Model model -tokens $1
   $grun Model model -tokens $1 | node $TOOLS_DIR/print-tokens.js
 }
 tree() {
