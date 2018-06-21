@@ -13,7 +13,7 @@ subscriptMapping : '->' ( Id | '(' Id ':' subscriptList ')' ) ;
 // The RHS is a formula expression, a constant list, or a Vensim lookup.
 // The RHS is empty for data equations.
 equation : lhs ( ( ':=' | '==' | '=' ) ( expr | constList ) | lookup )? ;
-lhs : Id ( '[' subscriptList ']' )? ;
+lhs : Id ( '[' subscriptList ']' )? ( ':EXCEPT:' '[' subscriptList ']' )? ;
 
 // The lexer strips some tokens we are not interested in.
 // The character encoding is given at the start of a Vensim file.
@@ -23,4 +23,4 @@ Encoding : '{' [A-Za-z0-9-]+ '}' -> skip ;
 UnitsDoc : '~' .*? '|' -> skip ;
 Group : '****' .*? '|' -> skip ;
 // Ignore the ANTLR 4 warning message for this rule.
-Sketch : '\\\\\\---/// Sketch' .* -> skip;
+Sketch : '\\\\\\---/// Sketch' .* -> skip ;

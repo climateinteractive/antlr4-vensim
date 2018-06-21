@@ -25,7 +25,7 @@ lookup : '(' lookupRange? lookupPointList ')' ;
 lookupRange : '[' lookupPoint '-' lookupPoint ']' ',' ;
 lookupPointList : lookupPoint (',' lookupPoint)* ;
 lookupPoint : '(' expr ',' expr ')' ;
-constList : expr ( ',' expr )+ | ( expr ( ',' expr )+ ';' )+;
+constList : ( expr ( ',' expr )+ | ( expr ( ',' expr )+ ';' )+ ) ;
 
 Star : '*' ;
 Div : '/' ;
@@ -40,7 +40,7 @@ TwoEqual : '==' ;
 NotEqual : '<>' ;
 Exclamation : '!' ;
 
-Id : ((Nondigit IdChar*) | (Nondigit (IdChar | ' ')* IdChar) | StringLiteral) (Whitespace* Exclamation)? ;
+Id : ( ( Nondigit IdChar* ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral ) ( Whitespace* Exclamation )? ;
 
 fragment
 IdChar : [a-zA-Z0-9_$'] ;
