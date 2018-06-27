@@ -22,5 +22,3 @@ lhs : Id ( '[' subscriptList ']' )? ( ':EXCEPT:' '[' subscriptList ']' )? ;
 Encoding : '{' [A-Za-z0-9-]+ '}' -> skip ;
 UnitsDoc : '~' .*? '|' -> skip ;
 Group : '****' .*? '|' -> skip ;
-// Ignore the ANTLR 4 warning message for this rule.
-Sketch : '\\\\\\---/// Sketch' .* -> skip ;

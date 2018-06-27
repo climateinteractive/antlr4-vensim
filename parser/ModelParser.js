@@ -6,7 +6,7 @@ var ModelVisitor = require('./ModelVisitor').ModelVisitor;
 var grammarFileName = "Model.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003%\u00d9\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003$\u00d9\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
     "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0004",
     "\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0003\u0002\u0003\u0002",
@@ -38,8 +38,8 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u000f\u0006\u000f\u00d3\n\u000f\r\u000f\u000e\u000f\u00d4\u0005\u000f",
     "\u00d7\n\u000f\u0003\u000f\u0002\u0003\u000e\u0010\u0002\u0004\u0006",
     "\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018\u001a\u001c\u0002\u0007\u0004",
-    "\u0002\u0007\u0007\u001d\u001e\u0003\u0002\u0015\u0016\u0003\u0002\u0017",
-    "\u0018\u0003\u0002\u0019\u001c\u0004\u0002\u001d\u001d\u001f\u001f\u0002",
+    "\u0002\u0007\u0007\u001c\u001d\u0003\u0002\u0014\u0015\u0003\u0002\u0016",
+    "\u0017\u0003\u0002\u0018\u001b\u0004\u0002\u001c\u001c\u001e\u001e\u0002",
     "\u00ef\u0002 \u0003\u0002\u0002\u0002\u0004$\u0003\u0002\u0002\u0002",
     "\u0006-\u0003\u0002\u0002\u0002\b3\u0003\u0002\u0002\u0002\n=\u0003",
     "\u0002\u0002\u0002\fF\u0003\u0002\u0002\u0002\u000ez\u0003\u0002\u0002",
@@ -50,39 +50,39 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0002\u001f!\u0005\n\u0006\u0002 \u001e\u0003\u0002\u0002\u0002 \u001f",
     "\u0003\u0002\u0002\u0002!\"\u0003\u0002\u0002\u0002\" \u0003\u0002\u0002",
     "\u0002\"#\u0003\u0002\u0002\u0002#\u0003\u0003\u0002\u0002\u0002$%\u0007",
-    "!\u0002\u0002%(\u0007\u0003\u0002\u0002&)\u0005\u0012\n\u0002\')\u0005",
+    " \u0002\u0002%(\u0007\u0003\u0002\u0002&)\u0005\u0012\n\u0002\')\u0005",
     "\u0006\u0004\u0002(&\u0003\u0002\u0002\u0002(\'\u0003\u0002\u0002\u0002",
     ")+\u0003\u0002\u0002\u0002*,\u0005\b\u0005\u0002+*\u0003\u0002\u0002",
     "\u0002+,\u0003\u0002\u0002\u0002,\u0005\u0003\u0002\u0002\u0002-.\u0007",
-    "\u0004\u0002\u0002./\u0007!\u0002\u0002/0\u0007\u0018\u0002\u000201",
-    "\u0007!\u0002\u000212\u0007\u0005\u0002\u00022\u0007\u0003\u0002\u0002",
-    "\u00023;\u0007\u0006\u0002\u00024<\u0007!\u0002\u000256\u0007\u0004",
-    "\u0002\u000267\u0007!\u0002\u000278\u0007\u0003\u0002\u000289\u0005",
+    "\u0004\u0002\u0002./\u0007 \u0002\u0002/0\u0007\u0017\u0002\u000201",
+    "\u0007 \u0002\u000212\u0007\u0005\u0002\u00022\u0007\u0003\u0002\u0002",
+    "\u00023;\u0007\u0006\u0002\u00024<\u0007 \u0002\u000256\u0007\u0004",
+    "\u0002\u000267\u0007 \u0002\u000278\u0007\u0003\u0002\u000289\u0005",
     "\u0012\n\u00029:\u0007\u0005\u0002\u0002:<\u0003\u0002\u0002\u0002;",
     "4\u0003\u0002\u0002\u0002;5\u0003\u0002\u0002\u0002<\t\u0003\u0002\u0002",
     "\u0002=D\u0005\f\u0007\u0002>A\t\u0002\u0002\u0002?B\u0005\u000e\b\u0002",
     "@B\u0005\u001c\u000f\u0002A?\u0003\u0002\u0002\u0002A@\u0003\u0002\u0002",
     "\u0002BE\u0003\u0002\u0002\u0002CE\u0005\u0014\u000b\u0002D>\u0003\u0002",
     "\u0002\u0002DC\u0003\u0002\u0002\u0002DE\u0003\u0002\u0002\u0002E\u000b",
-    "\u0003\u0002\u0002\u0002FK\u0007!\u0002\u0002GH\u0007\b\u0002\u0002",
+    "\u0003\u0002\u0002\u0002FK\u0007 \u0002\u0002GH\u0007\b\u0002\u0002",
     "HI\u0005\u0012\n\u0002IJ\u0007\t\u0002\u0002JL\u0003\u0002\u0002\u0002",
     "KG\u0003\u0002\u0002\u0002KL\u0003\u0002\u0002\u0002LR\u0003\u0002\u0002",
     "\u0002MN\u0007\n\u0002\u0002NO\u0007\b\u0002\u0002OP\u0005\u0012\n\u0002",
     "PQ\u0007\t\u0002\u0002QS\u0003\u0002\u0002\u0002RM\u0003\u0002\u0002",
     "\u0002RS\u0003\u0002\u0002\u0002S\r\u0003\u0002\u0002\u0002TU\b\b\u0001",
-    "\u0002UV\u0007!\u0002\u0002VX\u0007\u0004\u0002\u0002WY\u0005\u0010",
+    "\u0002UV\u0007 \u0002\u0002VX\u0007\u0004\u0002\u0002WY\u0005\u0010",
     "\t\u0002XW\u0003\u0002\u0002\u0002XY\u0003\u0002\u0002\u0002YZ\u0003",
-    "\u0002\u0002\u0002Z{\u0007\u0005\u0002\u0002[`\u0007!\u0002\u0002\\",
+    "\u0002\u0002\u0002Z{\u0007\u0005\u0002\u0002[`\u0007 \u0002\u0002\\",
     "]\u0007\b\u0002\u0002]^\u0005\u0012\n\u0002^_\u0007\t\u0002\u0002_a",
     "\u0003\u0002\u0002\u0002`\\\u0003\u0002\u0002\u0002`a\u0003\u0002\u0002",
     "\u0002ab\u0003\u0002\u0002\u0002bc\u0007\u0004\u0002\u0002cd\u0005\u000e",
     "\b\u0002de\u0007\u0005\u0002\u0002e{\u0003\u0002\u0002\u0002fg\u0007",
-    "\u000b\u0002\u0002g{\u0005\u000e\b\u0011hi\u0007\u0018\u0002\u0002i",
-    "{\u0005\u000e\b\u0010jk\u0007\u0017\u0002\u0002k{\u0005\u000e\b\u000f",
-    "lq\u0007!\u0002\u0002mn\u0007\b\u0002\u0002no\u0005\u0012\n\u0002op",
+    "\u000b\u0002\u0002g{\u0005\u000e\b\u0011hi\u0007\u0017\u0002\u0002i",
+    "{\u0005\u000e\b\u0010jk\u0007\u0016\u0002\u0002k{\u0005\u000e\b\u000f",
+    "lq\u0007 \u0002\u0002mn\u0007\b\u0002\u0002no\u0005\u0012\n\u0002op",
     "\u0007\t\u0002\u0002pr\u0003\u0002\u0002\u0002qm\u0003\u0002\u0002\u0002",
-    "qr\u0003\u0002\u0002\u0002r{\u0003\u0002\u0002\u0002s{\u0007\"\u0002",
-    "\u0002t{\u0007$\u0002\u0002u{\u0005\u0014\u000b\u0002vw\u0007\u0004",
+    "qr\u0003\u0002\u0002\u0002r{\u0003\u0002\u0002\u0002s{\u0007!\u0002",
+    "\u0002t{\u0007#\u0002\u0002u{\u0005\u0014\u000b\u0002vw\u0007\u0004",
     "\u0002\u0002wx\u0005\u000e\b\u0002xy\u0007\u0005\u0002\u0002y{\u0003",
     "\u0002\u0002\u0002zT\u0003\u0002\u0002\u0002z[\u0003\u0002\u0002\u0002",
     "zf\u0003\u0002\u0002\u0002zh\u0003\u0002\u0002\u0002zj\u0003\u0002\u0002",
@@ -108,8 +108,8 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0003\u0002\u0002\u0002\u009a\u009d\u0003\u0002\u0002\u0002\u009b\u0099",
     "\u0003\u0002\u0002\u0002\u009b\u009c\u0003\u0002\u0002\u0002\u009c\u0011",
     "\u0003\u0002\u0002\u0002\u009d\u009b\u0003\u0002\u0002\u0002\u009e\u00a3",
-    "\u0007!\u0002\u0002\u009f\u00a0\u0007\u000f\u0002\u0002\u00a0\u00a2",
-    "\u0007!\u0002\u0002\u00a1\u009f\u0003\u0002\u0002\u0002\u00a2\u00a5",
+    "\u0007 \u0002\u0002\u009f\u00a0\u0007\u000f\u0002\u0002\u00a0\u00a2",
+    "\u0007 \u0002\u0002\u00a1\u009f\u0003\u0002\u0002\u0002\u00a2\u00a5",
     "\u0003\u0002\u0002\u0002\u00a3\u00a1\u0003\u0002\u0002\u0002\u00a3\u00a4",
     "\u0003\u0002\u0002\u0002\u00a4\u0013\u0003\u0002\u0002\u0002\u00a5\u00a3",
     "\u0003\u0002\u0002\u0002\u00a6\u00a8\u0007\u0004\u0002\u0002\u00a7\u00a9",
@@ -117,7 +117,7 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0003\u0002\u0002\u0002\u00a9\u00aa\u0003\u0002\u0002\u0002\u00aa\u00ab",
     "\u0005\u0018\r\u0002\u00ab\u00ac\u0007\u0005\u0002\u0002\u00ac\u0015",
     "\u0003\u0002\u0002\u0002\u00ad\u00ae\u0007\b\u0002\u0002\u00ae\u00af",
-    "\u0005\u001a\u000e\u0002\u00af\u00b0\u0007\u0018\u0002\u0002\u00b0\u00b1",
+    "\u0005\u001a\u000e\u0002\u00af\u00b0\u0007\u0017\u0002\u0002\u00b0\u00b1",
     "\u0005\u001a\u000e\u0002\u00b1\u00b2\u0007\t\u0002\u0002\u00b2\u00b3",
     "\u0007\u000f\u0002\u0002\u00b3\u0017\u0003\u0002\u0002\u0002\u00b4\u00b9",
     "\u0005\u001a\u000e\u0002\u00b5\u00b6\u0007\u000f\u0002\u0002\u00b6\u00b8",
@@ -152,16 +152,16 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 
 var literalNames = [ null, "':'", "'('", "')'", "'->'", "':='", "'['", "']'", 
                      "':EXCEPT:'", "':NOT:'", "'^'", "':AND:'", "':OR:'", 
-                     "','", "';'", null, null, null, null, "'*'", "'/'", 
-                     "'+'", "'-'", "'<'", "'<='", "'>'", "'>='", "'='", 
-                     "'=='", "'<>'", "'!'", null, null, null, "':NA:'" ];
+                     "','", "';'", null, null, null, "'*'", "'/'", "'+'", 
+                     "'-'", "'<'", "'<='", "'>'", "'>='", "'='", "'=='", 
+                     "'<>'", "'!'", null, null, null, "':NA:'" ];
 
 var symbolicNames = [ null, null, null, null, null, null, null, null, null, 
                       null, null, null, null, null, null, "Encoding", "UnitsDoc", 
-                      "Group", "Sketch", "Star", "Div", "Plus", "Minus", 
-                      "Less", "LessEqual", "Greater", "GreaterEqual", "Equal", 
-                      "TwoEqual", "NotEqual", "Exclamation", "Id", "Const", 
-                      "StringLiteral", "Keyword", "Whitespace" ];
+                      "Group", "Star", "Div", "Plus", "Minus", "Less", "LessEqual", 
+                      "Greater", "GreaterEqual", "Equal", "TwoEqual", "NotEqual", 
+                      "Exclamation", "Id", "Const", "StringLiteral", "Keyword", 
+                      "Whitespace" ];
 
 var ruleNames =  [ "model", "subscriptRange", "subscriptSequence", "subscriptMapping", 
                    "equation", "lhs", "expr", "exprList", "subscriptList", 
@@ -204,24 +204,23 @@ ModelParser.T__13 = 14;
 ModelParser.Encoding = 15;
 ModelParser.UnitsDoc = 16;
 ModelParser.Group = 17;
-ModelParser.Sketch = 18;
-ModelParser.Star = 19;
-ModelParser.Div = 20;
-ModelParser.Plus = 21;
-ModelParser.Minus = 22;
-ModelParser.Less = 23;
-ModelParser.LessEqual = 24;
-ModelParser.Greater = 25;
-ModelParser.GreaterEqual = 26;
-ModelParser.Equal = 27;
-ModelParser.TwoEqual = 28;
-ModelParser.NotEqual = 29;
-ModelParser.Exclamation = 30;
-ModelParser.Id = 31;
-ModelParser.Const = 32;
-ModelParser.StringLiteral = 33;
-ModelParser.Keyword = 34;
-ModelParser.Whitespace = 35;
+ModelParser.Star = 18;
+ModelParser.Div = 19;
+ModelParser.Plus = 20;
+ModelParser.Minus = 21;
+ModelParser.Less = 22;
+ModelParser.LessEqual = 23;
+ModelParser.Greater = 24;
+ModelParser.GreaterEqual = 25;
+ModelParser.Equal = 26;
+ModelParser.TwoEqual = 27;
+ModelParser.NotEqual = 28;
+ModelParser.Exclamation = 29;
+ModelParser.Id = 30;
+ModelParser.Const = 31;
+ModelParser.StringLiteral = 32;
+ModelParser.Keyword = 33;
+ModelParser.Whitespace = 34;
 
 ModelParser.RULE_model = 0;
 ModelParser.RULE_subscriptRange = 1;
@@ -1291,7 +1290,7 @@ ModelParser.prototype.expr = function(_p) {
             this.state = 86;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__8) | (1 << ModelParser.Plus) | (1 << ModelParser.Minus) | (1 << ModelParser.Id))) !== 0) || _la===ModelParser.Const || _la===ModelParser.Keyword) {
+            if(((((_la - 2)) & ~0x1f) == 0 && ((1 << (_la - 2)) & ((1 << (ModelParser.T__1 - 2)) | (1 << (ModelParser.T__8 - 2)) | (1 << (ModelParser.Plus - 2)) | (1 << (ModelParser.Minus - 2)) | (1 << (ModelParser.Id - 2)) | (1 << (ModelParser.Const - 2)) | (1 << (ModelParser.Keyword - 2)))) !== 0)) {
                 this.state = 85;
                 this.exprList();
             }
