@@ -30,6 +30,12 @@ ModelVisitor.prototype.visitSubscriptSequence = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ModelParser#subscriptMappingList.
+ModelVisitor.prototype.visitSubscriptMappingList = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by ModelParser#subscriptMapping.
 ModelVisitor.prototype.visitSubscriptMapping = function(ctx) {
   return this.visitChildren(ctx);
