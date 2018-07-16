@@ -43,7 +43,7 @@ Exclamation : '!' ;
 Id : ( ( Nondigit IdChar* ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral ) ( Whitespace* Exclamation )? ;
 
 fragment
-IdChar : [a-zA-Z0-9_$'] ;
+IdChar : [a-zA-Z0-9_$'&%] ;
 
 fragment
 Nondigit : [a-zA-Z_] ;
