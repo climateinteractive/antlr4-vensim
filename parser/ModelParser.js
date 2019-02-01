@@ -1,9 +1,10 @@
-// Generated from grammar/Model.g4 by ANTLR 4.7.1
+// Generated from grammar/Model.g4 by ANTLR 4.7.2
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 var ModelVisitor = require('./ModelVisitor').ModelVisitor;
 
 var grammarFileName = "Model.g4";
+
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0003$\u00e3\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
@@ -246,6 +247,7 @@ ModelParser.RULE_lookupPointList = 12;
 ModelParser.RULE_lookupPoint = 13;
 ModelParser.RULE_constList = 14;
 
+
 function ModelContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -341,6 +343,7 @@ ModelParser.prototype.model = function() {
     return localctx;
 };
 
+
 function SubscriptRangeContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -433,6 +436,7 @@ ModelParser.prototype.subscriptRange = function() {
     return localctx;
 };
 
+
 function SubscriptSequenceContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -460,6 +464,10 @@ SubscriptSequenceContext.prototype.Id = function(i) {
     }
 };
 
+
+SubscriptSequenceContext.prototype.Minus = function() {
+    return this.getToken(ModelParser.Minus, 0);
+};
 
 SubscriptSequenceContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ModelVisitor ) {
@@ -503,6 +511,7 @@ ModelParser.prototype.subscriptSequence = function() {
     }
     return localctx;
 };
+
 
 function SubscriptMappingListContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -580,6 +589,7 @@ ModelParser.prototype.subscriptMappingList = function() {
     }
     return localctx;
 };
+
 
 function SubscriptMappingContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -661,6 +671,7 @@ ModelParser.prototype.subscriptMapping = function() {
     return localctx;
 };
 
+
 function EquationContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -683,6 +694,14 @@ EquationContext.prototype.lhs = function() {
 
 EquationContext.prototype.lookup = function() {
     return this.getTypedRuleContext(LookupContext,0);
+};
+
+EquationContext.prototype.TwoEqual = function() {
+    return this.getToken(ModelParser.TwoEqual, 0);
+};
+
+EquationContext.prototype.Equal = function() {
+    return this.getToken(ModelParser.Equal, 0);
 };
 
 EquationContext.prototype.expr = function() {
@@ -769,6 +788,7 @@ ModelParser.prototype.equation = function() {
     }
     return localctx;
 };
+
 
 function LhsContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -862,6 +882,7 @@ ModelParser.prototype.lhs = function() {
     }
     return localctx;
 };
+
 
 function ExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -987,6 +1008,14 @@ MulDivContext.prototype.expr = function(i) {
         return this.getTypedRuleContext(ExprContext,i);
     }
 };
+
+MulDivContext.prototype.Star = function() {
+    return this.getToken(ModelParser.Star, 0);
+};
+
+MulDivContext.prototype.Div = function() {
+    return this.getToken(ModelParser.Div, 0);
+};
 MulDivContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ModelVisitor ) {
         return visitor.visitMulDiv(this);
@@ -1017,6 +1046,14 @@ AddSubContext.prototype.expr = function(i) {
     } else {
         return this.getTypedRuleContext(ExprContext,i);
     }
+};
+
+AddSubContext.prototype.Plus = function() {
+    return this.getToken(ModelParser.Plus, 0);
+};
+
+AddSubContext.prototype.Minus = function() {
+    return this.getToken(ModelParser.Minus, 0);
 };
 AddSubContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ModelVisitor ) {
@@ -1122,6 +1159,22 @@ RelationalContext.prototype.expr = function(i) {
         return this.getTypedRuleContext(ExprContext,i);
     }
 };
+
+RelationalContext.prototype.Less = function() {
+    return this.getToken(ModelParser.Less, 0);
+};
+
+RelationalContext.prototype.Greater = function() {
+    return this.getToken(ModelParser.Greater, 0);
+};
+
+RelationalContext.prototype.LessEqual = function() {
+    return this.getToken(ModelParser.LessEqual, 0);
+};
+
+RelationalContext.prototype.GreaterEqual = function() {
+    return this.getToken(ModelParser.GreaterEqual, 0);
+};
 RelationalContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ModelVisitor ) {
         return visitor.visitRelational(this);
@@ -1196,6 +1249,10 @@ NegativeContext.prototype.constructor = NegativeContext;
 
 ModelParser.NegativeContext = NegativeContext;
 
+NegativeContext.prototype.Minus = function() {
+    return this.getToken(ModelParser.Minus, 0);
+};
+
 NegativeContext.prototype.expr = function() {
     return this.getTypedRuleContext(ExprContext,0);
 };
@@ -1218,6 +1275,10 @@ PositiveContext.prototype = Object.create(ExprContext.prototype);
 PositiveContext.prototype.constructor = PositiveContext;
 
 ModelParser.PositiveContext = PositiveContext;
+
+PositiveContext.prototype.Plus = function() {
+    return this.getToken(ModelParser.Plus, 0);
+};
 
 PositiveContext.prototype.expr = function() {
     return this.getTypedRuleContext(ExprContext,0);
@@ -1282,6 +1343,14 @@ EqualityContext.prototype.expr = function(i) {
     } else {
         return this.getTypedRuleContext(ExprContext,i);
     }
+};
+
+EqualityContext.prototype.Equal = function() {
+    return this.getToken(ModelParser.Equal, 0);
+};
+
+EqualityContext.prototype.NotEqual = function() {
+    return this.getToken(ModelParser.NotEqual, 0);
 };
 EqualityContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ModelVisitor ) {
@@ -1655,6 +1724,7 @@ ModelParser.prototype.expr = function(_p) {
     return localctx;
 };
 
+
 function ExprListContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -1729,6 +1799,7 @@ ModelParser.prototype.exprList = function() {
     }
     return localctx;
 };
+
 
 function SubscriptListContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1806,6 +1877,7 @@ ModelParser.prototype.subscriptList = function() {
     return localctx;
 };
 
+
 function LookupContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -1878,6 +1950,7 @@ ModelParser.prototype.lookup = function() {
     return localctx;
 };
 
+
 function LookupRangeContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -1903,6 +1976,10 @@ LookupRangeContext.prototype.lookupPoint = function(i) {
     } else {
         return this.getTypedRuleContext(LookupPointContext,i);
     }
+};
+
+LookupRangeContext.prototype.Minus = function() {
+    return this.getToken(ModelParser.Minus, 0);
 };
 
 LookupRangeContext.prototype.accept = function(visitor) {
@@ -1949,6 +2026,7 @@ ModelParser.prototype.lookupRange = function() {
     }
     return localctx;
 };
+
 
 function LookupPointListContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -2025,6 +2103,7 @@ ModelParser.prototype.lookupPointList = function() {
     return localctx;
 };
 
+
 function LookupPointContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -2094,6 +2173,7 @@ ModelParser.prototype.lookupPoint = function() {
     }
     return localctx;
 };
+
 
 function ConstListContext(parser, parent, invokingState) {
 	if(parent===undefined) {
