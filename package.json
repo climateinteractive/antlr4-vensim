@@ -19,7 +19,7 @@
     "antlr4": "4.7.2"
   },
   "devDependencies": {
-    "bufx": "^1.0.3",
+    "bufx": "^1.0.4",
     "get-stdin": "^6.0.0"
   }
 }
