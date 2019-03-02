@@ -3,7 +3,7 @@
   "version": "0.4.2",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
-    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.7.1-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
+    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.7.2-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
   },
   "main": "index.js",
   "author": "Todd Fincannon",
@@ -16,10 +16,10 @@
     "url": "https://github.com/ToddFincannon/antlr4-vensim/issues"
   },
   "dependencies": {
-    "antlr4": "4.7.1"
+    "antlr4": "4.7.2"
   },
   "devDependencies": {
-    "bufx": "^1.0.0",
+    "bufx": "^1.0.4",
     "get-stdin": "^6.0.0"
   }
 }
