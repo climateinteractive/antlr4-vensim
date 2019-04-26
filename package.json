@@ -1,6 +1,6 @@
 {
   "name": "antlr4-vensim",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
     "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.7.2-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
