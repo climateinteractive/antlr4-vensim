@@ -4,7 +4,7 @@ const { pr, lines } = require('bufx')
 // Print an ANTLR 4 lex listing from stdin.
 let readToken = token => {
   let result = ''
-  let re = /\[@(\d+),(\d+):(\d+)='([^']+)',(<[^>]+>),(\d+):(\d+)\]/
+  let re = /\[@(\d+),(\d+):(\d+)='(.+)',(<[^>]+>),(\d+):(\d+)\]/
   let m = token.match(re)
   if (m) {
     let seq = m[1]

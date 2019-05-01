@@ -56,6 +56,7 @@ Digit
 Const
     :   IntegerConst
     |   FloatingConst
+    |   StringConst
     ;
 
 fragment
@@ -100,6 +101,10 @@ StringLiteral
     :   '"' SCharSequence? '"'
     ;
 
+StringConst
+    :   '\'' SCharSequence? '\''
+    ;
+
 fragment
 SCharSequence
     :   SChar+
@@ -107,12 +112,7 @@ SCharSequence
 
 fragment
 SChar
-    :   ~["\\\r\n]
-    ;
-
-fragment
-EscapeSequence
-    :   '\\' ['"?abfnrtv\\]
+    :   ~['\\\r\n]
     ;
 
 Keyword : ':NA:' ;

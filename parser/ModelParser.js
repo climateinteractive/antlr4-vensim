@@ -1,13 +1,13 @@
 // Generated from grammar/Model.g4 by ANTLR 4.7.2
 // jshint ignore: start
-var antlr4 = require('antlr4');
+var antlr4 = require('antlr4/index');
 var ModelVisitor = require('./ModelVisitor').ModelVisitor;
 
 var grammarFileName = "Model.g4";
 
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003$\u00ec\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003%\u00ec\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
     "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0004",
     "\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0004\u0010\t\u0010\u0003",
@@ -94,7 +94,7 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0014\u000b\u0002\u0082\u0083\u0007\n\u0002\u0002\u0083\u0085\u0003",
     "\u0002\u0002\u0002\u0084\u0080\u0003\u0002\u0002\u0002\u0084\u0085\u0003",
     "\u0002\u0002\u0002\u0085\u008e\u0003\u0002\u0002\u0002\u0086\u008e\u0007",
-    "!\u0002\u0002\u0087\u008e\u0007#\u0002\u0002\u0088\u008e\u0005\u0016",
+    "!\u0002\u0002\u0087\u008e\u0007$\u0002\u0002\u0088\u008e\u0005\u0016",
     "\f\u0002\u0089\u008a\u0007\u0004\u0002\u0002\u008a\u008b\u0005\u0010",
     "\t\u0002\u008b\u008c\u0007\u0005\u0002\u0002\u008c\u008e\u0003\u0002",
     "\u0002\u0002\u008dg\u0003\u0002\u0002\u0002\u008dn\u0003\u0002\u0002",
@@ -169,14 +169,14 @@ var literalNames = [ null, "':'", "'('", "')'", "'->'", "','", "':='", "'['",
                      "']'", "':EXCEPT:'", "':NOT:'", "'^'", "':AND:'", "':OR:'", 
                      "';'", null, null, null, "'*'", "'/'", "'+'", "'-'", 
                      "'<'", "'<='", "'>'", "'>='", "'='", "'=='", "'<>'", 
-                     "'!'", null, null, null, "':NA:'" ];
+                     "'!'", null, null, null, null, "':NA:'" ];
 
 var symbolicNames = [ null, null, null, null, null, null, null, null, null, 
                       null, null, null, null, null, null, "Encoding", "UnitsDoc", 
                       "Group", "Star", "Div", "Plus", "Minus", "Less", "LessEqual", 
                       "Greater", "GreaterEqual", "Equal", "TwoEqual", "NotEqual", 
-                      "Exclamation", "Id", "Const", "StringLiteral", "Keyword", 
-                      "Whitespace" ];
+                      "Exclamation", "Id", "Const", "StringLiteral", "StringConst", 
+                      "Keyword", "Whitespace" ];
 
 var ruleNames =  [ "model", "subscriptRange", "subscriptSequence", "subscriptMappingList", 
                    "subscriptMapping", "equation", "lhs", "expr", "exprList", 
@@ -234,8 +234,9 @@ ModelParser.Exclamation = 29;
 ModelParser.Id = 30;
 ModelParser.Const = 31;
 ModelParser.StringLiteral = 32;
-ModelParser.Keyword = 33;
-ModelParser.Whitespace = 34;
+ModelParser.StringConst = 33;
+ModelParser.Keyword = 34;
+ModelParser.Whitespace = 35;
 
 ModelParser.RULE_model = 0;
 ModelParser.RULE_subscriptRange = 1;
@@ -1466,7 +1467,7 @@ ModelParser.prototype.expr = function(_p) {
             this.state = 105;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if(((((_la - 2)) & ~0x1f) == 0 && ((1 << (_la - 2)) & ((1 << (ModelParser.T__1 - 2)) | (1 << (ModelParser.T__9 - 2)) | (1 << (ModelParser.Plus - 2)) | (1 << (ModelParser.Minus - 2)) | (1 << (ModelParser.Id - 2)) | (1 << (ModelParser.Const - 2)) | (1 << (ModelParser.Keyword - 2)))) !== 0)) {
+            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__9) | (1 << ModelParser.Plus) | (1 << ModelParser.Minus) | (1 << ModelParser.Id) | (1 << ModelParser.Const))) !== 0) || _la===ModelParser.Keyword) {
                 this.state = 104;
                 this.exprList();
             }
