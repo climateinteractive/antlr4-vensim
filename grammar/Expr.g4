@@ -112,7 +112,7 @@ SCharSequence
 
 fragment
 SChar
-    :   ~['\\\r\n]
+    :   ~['"\\\r\n]
     ;
 
 Keyword : ':NA:' ;
