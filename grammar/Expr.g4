@@ -115,6 +115,8 @@ SChar
     :   ~['"\\\r\n]
     ;
 
-Keyword : ':NA:' ;
+Keyword
+    :   ':NA:'
+    ;
 
 Whitespace : [ \t\n\r]+ -> skip ;
