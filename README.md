@@ -22,15 +22,15 @@ Vensim grammar development uses the [ANTLR 4](http://www.antlr.org/) parser gene
 
 Install the latest [Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-Install ANTLR 4 Java tools version 4.7.1.
+Install ANTLR 4 Java tools version 4.7.2.
 ~~~
 cd /usr/local/lib
-sudo curl -O http://www.antlr.org/download/antlr-4.7.1-complete.jar
+sudo curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar
 ~~~
 
 Set up ANTLR 4 in `.bash_profile`.
 ~~~
-export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
+export CLASSPATH=".:/usr/local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
 ~~~
 
 ## Developing the parser

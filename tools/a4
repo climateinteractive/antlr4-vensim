@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 TOOLS_DIR=$(pwd)
-ANTLR_VERSION=4.7.1
+ANTLR_VERSION=4.7.2
 antlr4="java -jar /usr/local/lib/antlr-$ANTLR_VERSION-complete.jar"
 grun='java org.antlr.v4.gui.TestRig'
 help() {
