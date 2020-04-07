@@ -1,25 +1,25 @@
 {
   "name": "antlr4-vensim",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
-    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.7.2-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
+    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.8-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
   },
   "main": "index.js",
-  "author": "Todd Fincannon",
+  "author": "Climate Interactive",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ToddFincannon/antlr4-vensim.git"
+    "url": "https://github.com/climateinteractive/antlr4-vensim.git"
   },
   "bugs": {
-    "url": "https://github.com/ToddFincannon/antlr4-vensim/issues"
+    "url": "https://github.com/climateinteractive/antlr4-vensim/issues"
   },
   "dependencies": {
-    "antlr4": "4.7.2"
+    "antlr4": "4.8.0"
   },
   "devDependencies": {
-    "bufx": "^1.0.4",
+    "bufx": "^1.0.5",
     "get-stdin": "^6.0.0"
   }
 }
