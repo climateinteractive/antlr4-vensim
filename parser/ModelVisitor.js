@@ -1,202 +1,196 @@
-// Generated from grammar/Model.g4 by ANTLR 4.8
+// Generated from grammar/Model.g4 by ANTLR 4.9.2
 // jshint ignore: start
-var antlr4 = require('antlr4/index');
+import antlr4 from 'antlr4';
 
 // This class defines a complete generic visitor for a parse tree produced by ModelParser.
 
-function ModelVisitor() {
-	antlr4.tree.ParseTreeVisitor.call(this);
-	return this;
+export default class ModelVisitor extends antlr4.tree.ParseTreeVisitor {
+
+	// Visit a parse tree produced by ModelParser#model.
+	visitModel(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#subscriptRange.
+	visitSubscriptRange(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#subscriptSequence.
+	visitSubscriptSequence(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#subscriptMappingList.
+	visitSubscriptMappingList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#subscriptMapping.
+	visitSubscriptMapping(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#equation.
+	visitEquation(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#lhs.
+	visitLhs(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Call.
+	visitCall(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Or.
+	visitOr(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Keyword.
+	visitKeyword(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#MulDiv.
+	visitMulDiv(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#AddSub.
+	visitAddSub(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Var.
+	visitVar(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Parens.
+	visitParens(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Const.
+	visitConst(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Relational.
+	visitRelational(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#LookupCall.
+	visitLookupCall(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Not.
+	visitNot(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Negative.
+	visitNegative(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Positive.
+	visitPositive(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#And.
+	visitAnd(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Equality.
+	visitEquality(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#LookupArg.
+	visitLookupArg(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#Power.
+	visitPower(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#exprList.
+	visitExprList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#subscriptList.
+	visitSubscriptList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#lookup.
+	visitLookup(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#lookupRange.
+	visitLookupRange(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#lookupPointList.
+	visitLookupPointList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#lookupPoint.
+	visitLookupPoint(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#constList.
+	visitConstList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+
 }
-
-ModelVisitor.prototype = Object.create(antlr4.tree.ParseTreeVisitor.prototype);
-ModelVisitor.prototype.constructor = ModelVisitor;
-
-// Visit a parse tree produced by ModelParser#model.
-ModelVisitor.prototype.visitModel = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#subscriptRange.
-ModelVisitor.prototype.visitSubscriptRange = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#subscriptSequence.
-ModelVisitor.prototype.visitSubscriptSequence = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#subscriptMappingList.
-ModelVisitor.prototype.visitSubscriptMappingList = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#subscriptMapping.
-ModelVisitor.prototype.visitSubscriptMapping = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#equation.
-ModelVisitor.prototype.visitEquation = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#lhs.
-ModelVisitor.prototype.visitLhs = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Call.
-ModelVisitor.prototype.visitCall = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Or.
-ModelVisitor.prototype.visitOr = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Keyword.
-ModelVisitor.prototype.visitKeyword = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#MulDiv.
-ModelVisitor.prototype.visitMulDiv = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#AddSub.
-ModelVisitor.prototype.visitAddSub = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Var.
-ModelVisitor.prototype.visitVar = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Parens.
-ModelVisitor.prototype.visitParens = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Const.
-ModelVisitor.prototype.visitConst = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Relational.
-ModelVisitor.prototype.visitRelational = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#LookupCall.
-ModelVisitor.prototype.visitLookupCall = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Not.
-ModelVisitor.prototype.visitNot = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Negative.
-ModelVisitor.prototype.visitNegative = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Positive.
-ModelVisitor.prototype.visitPositive = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#And.
-ModelVisitor.prototype.visitAnd = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Equality.
-ModelVisitor.prototype.visitEquality = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#LookupArg.
-ModelVisitor.prototype.visitLookupArg = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#Power.
-ModelVisitor.prototype.visitPower = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#exprList.
-ModelVisitor.prototype.visitExprList = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#subscriptList.
-ModelVisitor.prototype.visitSubscriptList = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#lookup.
-ModelVisitor.prototype.visitLookup = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#lookupRange.
-ModelVisitor.prototype.visitLookupRange = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#lookupPointList.
-ModelVisitor.prototype.visitLookupPointList = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#lookupPoint.
-ModelVisitor.prototype.visitLookupPoint = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ModelParser#constList.
-ModelVisitor.prototype.visitConstList = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-
-exports.ModelVisitor = ModelVisitor;

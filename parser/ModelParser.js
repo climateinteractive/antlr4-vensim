@@ -1,28 +1,26 @@
-// Generated from grammar/Model.g4 by ANTLR 4.8
+// Generated from grammar/Model.g4 by ANTLR 4.9.2
 // jshint ignore: start
-var antlr4 = require('antlr4/index');
-var ModelVisitor = require('./ModelVisitor').ModelVisitor;
-
-var grammarFileName = "Model.g4";
+import antlr4 from 'antlr4';
+import ModelVisitor from './ModelVisitor.js';
 
 
-var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003&\u00ef\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
-    "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
-    "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0004",
-    "\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0004\u0010\t\u0010\u0003",
-    "\u0002\u0003\u0002\u0006\u0002#\n\u0002\r\u0002\u000e\u0002$\u0003\u0003",
-    "\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003+\n\u0003\u0003\u0003",
-    "\u0005\u0003.\n\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
-    "\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005",
-    "\u0007\u0005:\n\u0005\f\u0005\u000e\u0005=\u000b\u0005\u0003\u0006\u0003",
-    "\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0005",
-    "\u0006F\n\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0005",
-    "\u0007L\n\u0007\u0003\u0007\u0005\u0007O\n\u0007\u0003\b\u0003\b\u0003",
-    "\b\u0003\b\u0003\b\u0005\bV\n\b\u0003\b\u0005\bY\n\b\u0003\b\u0003\b",
-    "\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0007\bd\n",
-    "\b\f\b\u000e\bg\u000b\b\u0005\bi\n\b\u0003\t\u0003\t\u0003\t\u0003\t",
-    "\u0005\to\n\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0005",
+const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
+    "\u5964\u0003&\u00ef\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004",
+    "\t\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007",
+    "\u0004\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f",
+    "\u0004\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0004\u0010\t\u0010",
+    "\u0003\u0002\u0003\u0002\u0006\u0002#\n\u0002\r\u0002\u000e\u0002$\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003+\n\u0003\u0003",
+    "\u0003\u0005\u0003.\n\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003",
+    "\u0004\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003",
+    "\u0005\u0007\u0005:\n\u0005\f\u0005\u000e\u0005=\u000b\u0005\u0003\u0006",
+    "\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006",
+    "\u0005\u0006F\n\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007",
+    "\u0005\u0007L\n\u0007\u0003\u0007\u0005\u0007O\n\u0007\u0003\b\u0003",
+    "\b\u0003\b\u0003\b\u0003\b\u0005\bV\n\b\u0003\b\u0005\bY\n\b\u0003\b",
+    "\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0007",
+    "\bd\n\b\f\b\u000e\bg\u000b\b\u0005\bi\n\b\u0003\t\u0003\t\u0003\t\u0003",
+    "\t\u0005\to\n\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0005",
     "\tw\n\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003",
     "\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0005\t\u0088",
     "\n\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0005\t",
@@ -161,48 +159,1019 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u00cf\u00dd\u00e4\u00ea\u00ec"].join("");
 
 
-var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
+const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
 
-var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new antlr4.dfa.DFA(ds, index); });
+const decisionsToDFA = atn.decisionToState.map( (ds, index) => new antlr4.dfa.DFA(ds, index) );
 
-var sharedContextCache = new antlr4.PredictionContextCache();
+const sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ null, "':'", "'('", "')'", "'->'", "','", "':='", "'['", 
-                     "']'", "':INTERPOLATE:'", "':EXCEPT:'", "':NOT:'", 
-                     "'^'", "':AND:'", "':OR:'", "';'", null, null, null, 
-                     "'*'", "'/'", "'+'", "'-'", "'<'", "'<='", "'>'", "'>='", 
-                     "'='", "'=='", "'<>'", "'!'", null, null, null, null, 
-                     "':NA:'" ];
+export default class ModelParser extends antlr4.Parser {
 
-var symbolicNames = [ null, null, null, null, null, null, null, null, null, 
-                      null, null, null, null, null, null, null, "Encoding", 
-                      "UnitsDoc", "Group", "Star", "Div", "Plus", "Minus", 
-                      "Less", "LessEqual", "Greater", "GreaterEqual", "Equal", 
-                      "TwoEqual", "NotEqual", "Exclamation", "Id", "Const", 
-                      "StringLiteral", "StringConst", "Keyword", "Whitespace" ];
+    static grammarFileName = "Model.g4";
+    static literalNames = [ null, "':'", "'('", "')'", "'->'", "','", "':='", 
+                            "'['", "']'", "':INTERPOLATE:'", "':EXCEPT:'", 
+                            "':NOT:'", "'^'", "':AND:'", "':OR:'", "';'", 
+                            null, null, null, "'*'", "'/'", "'+'", "'-'", 
+                            "'<'", "'<='", "'>'", "'>='", "'='", "'=='", 
+                            "'<>'", "'!'", null, null, null, null, "':NA:'" ];
+    static symbolicNames = [ null, null, null, null, null, null, null, null, 
+                             null, null, null, null, null, null, null, null, 
+                             "Encoding", "UnitsDoc", "Group", "Star", "Div", 
+                             "Plus", "Minus", "Less", "LessEqual", "Greater", 
+                             "GreaterEqual", "Equal", "TwoEqual", "NotEqual", 
+                             "Exclamation", "Id", "Const", "StringLiteral", 
+                             "StringConst", "Keyword", "Whitespace" ];
+    static ruleNames = [ "model", "subscriptRange", "subscriptSequence", 
+                         "subscriptMappingList", "subscriptMapping", "equation", 
+                         "lhs", "expr", "exprList", "subscriptList", "lookup", 
+                         "lookupRange", "lookupPointList", "lookupPoint", 
+                         "constList" ];
 
-var ruleNames =  [ "model", "subscriptRange", "subscriptSequence", "subscriptMappingList", 
-                   "subscriptMapping", "equation", "lhs", "expr", "exprList", 
-                   "subscriptList", "lookup", "lookupRange", "lookupPointList", 
-                   "lookupPoint", "constList" ];
+    constructor(input) {
+        super(input);
+        this._interp = new antlr4.atn.ParserATNSimulator(this, atn, decisionsToDFA, sharedContextCache);
+        this.ruleNames = ModelParser.ruleNames;
+        this.literalNames = ModelParser.literalNames;
+        this.symbolicNames = ModelParser.symbolicNames;
+    }
 
-function ModelParser (input) {
-	antlr4.Parser.call(this, input);
-    this._interp = new antlr4.atn.ParserATNSimulator(this, atn, decisionsToDFA, sharedContextCache);
-    this.ruleNames = ruleNames;
-    this.literalNames = literalNames;
-    this.symbolicNames = symbolicNames;
-    return this;
-}
+    get atn() {
+        return atn;
+    }
 
-ModelParser.prototype = Object.create(antlr4.Parser.prototype);
-ModelParser.prototype.constructor = ModelParser;
+    sempred(localctx, ruleIndex, predIndex) {
+    	switch(ruleIndex) {
+    	case 7:
+    	    		return this.expr_sempred(localctx, predIndex);
+        default:
+            throw "No predicate with index:" + ruleIndex;
+       }
+    }
 
-Object.defineProperty(ModelParser.prototype, "atn", {
-	get : function() {
-		return atn;
+    expr_sempred(localctx, predIndex) {
+    	switch(predIndex) {
+    		case 0:
+    			return this.precpred(this._ctx, 12);
+    		case 1:
+    			return this.precpred(this._ctx, 11);
+    		case 2:
+    			return this.precpred(this._ctx, 10);
+    		case 3:
+    			return this.precpred(this._ctx, 9);
+    		case 4:
+    			return this.precpred(this._ctx, 8);
+    		case 5:
+    			return this.precpred(this._ctx, 7);
+    		case 6:
+    			return this.precpred(this._ctx, 6);
+    		default:
+    			throw "No predicate with index:" + predIndex;
+    	}
+    };
+
+
+
+
+	model() {
+	    let localctx = new ModelContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 0, ModelParser.RULE_model);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 32; 
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        do {
+	            this.state = 32;
+	            this._errHandler.sync(this);
+	            var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
+	            switch(la_) {
+	            case 1:
+	                this.state = 30;
+	                this.subscriptRange();
+	                break;
+
+	            case 2:
+	                this.state = 31;
+	                this.equation();
+	                break;
+
+	            }
+	            this.state = 34; 
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        } while(_la===ModelParser.Id);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
 	}
-});
+
+
+
+	subscriptRange() {
+	    let localctx = new SubscriptRangeContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 2, ModelParser.RULE_subscriptRange);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 36;
+	        this.match(ModelParser.Id);
+	        this.state = 37;
+	        this.match(ModelParser.T__0);
+	        this.state = 40;
+	        this._errHandler.sync(this);
+	        switch(this._input.LA(1)) {
+	        case ModelParser.Id:
+	            this.state = 38;
+	            this.subscriptList();
+	            break;
+	        case ModelParser.T__1:
+	            this.state = 39;
+	            this.subscriptSequence();
+	            break;
+	        default:
+	            throw new antlr4.error.NoViableAltException(this);
+	        }
+	        this.state = 43;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===ModelParser.T__3) {
+	            this.state = 42;
+	            this.subscriptMappingList();
+	        }
+
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	subscriptSequence() {
+	    let localctx = new SubscriptSequenceContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 4, ModelParser.RULE_subscriptSequence);
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 45;
+	        this.match(ModelParser.T__1);
+	        this.state = 46;
+	        this.match(ModelParser.Id);
+	        this.state = 47;
+	        this.match(ModelParser.Minus);
+	        this.state = 48;
+	        this.match(ModelParser.Id);
+	        this.state = 49;
+	        this.match(ModelParser.T__2);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	subscriptMappingList() {
+	    let localctx = new SubscriptMappingListContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 6, ModelParser.RULE_subscriptMappingList);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 51;
+	        this.match(ModelParser.T__3);
+	        this.state = 52;
+	        this.subscriptMapping();
+	        this.state = 57;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        while(_la===ModelParser.T__4) {
+	            this.state = 53;
+	            this.match(ModelParser.T__4);
+	            this.state = 54;
+	            this.subscriptMapping();
+	            this.state = 59;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	subscriptMapping() {
+	    let localctx = new SubscriptMappingContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 8, ModelParser.RULE_subscriptMapping);
+	    try {
+	        this.state = 67;
+	        this._errHandler.sync(this);
+	        switch(this._input.LA(1)) {
+	        case ModelParser.Id:
+	            this.enterOuterAlt(localctx, 1);
+	            this.state = 60;
+	            this.match(ModelParser.Id);
+	            break;
+	        case ModelParser.T__1:
+	            this.enterOuterAlt(localctx, 2);
+	            this.state = 61;
+	            this.match(ModelParser.T__1);
+	            this.state = 62;
+	            this.match(ModelParser.Id);
+	            this.state = 63;
+	            this.match(ModelParser.T__0);
+	            this.state = 64;
+	            this.subscriptList();
+	            this.state = 65;
+	            this.match(ModelParser.T__2);
+	            break;
+	        default:
+	            throw new antlr4.error.NoViableAltException(this);
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	equation() {
+	    let localctx = new EquationContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 10, ModelParser.RULE_equation);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 69;
+	        this.lhs();
+	        this.state = 76;
+	        this._errHandler.sync(this);
+	        switch (this._input.LA(1)) {
+	        case ModelParser.T__5:
+	        case ModelParser.Equal:
+	        case ModelParser.TwoEqual:
+	        	this.state = 70;
+	        	_la = this._input.LA(1);
+	        	if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.T__5) | (1 << ModelParser.Equal) | (1 << ModelParser.TwoEqual))) !== 0))) {
+	        	this._errHandler.recoverInline(this);
+	        	}
+	        	else {
+	        		this._errHandler.reportMatch(this);
+	        	    this.consume();
+	        	}
+	        	this.state = 73;
+	        	this._errHandler.sync(this);
+	        	var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
+	        	switch(la_) {
+	        	case 1:
+	        	    this.state = 71;
+	        	    this.expr(0);
+	        	    break;
+
+	        	case 2:
+	        	    this.state = 72;
+	        	    this.constList();
+	        	    break;
+
+	        	}
+	        	break;
+	        case ModelParser.T__1:
+	        	this.state = 75;
+	        	this.lookup();
+	        	break;
+	        case ModelParser.EOF:
+	        case ModelParser.Id:
+	        	break;
+	        default:
+	        	break;
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	lhs() {
+	    let localctx = new LhsContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 12, ModelParser.RULE_lhs);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 78;
+	        this.match(ModelParser.Id);
+	        this.state = 83;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===ModelParser.T__6) {
+	            this.state = 79;
+	            this.match(ModelParser.T__6);
+	            this.state = 80;
+	            this.subscriptList();
+	            this.state = 81;
+	            this.match(ModelParser.T__7);
+	        }
+
+	        this.state = 86;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===ModelParser.T__8) {
+	            this.state = 85;
+	            this.match(ModelParser.T__8);
+	        }
+
+	        this.state = 102;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===ModelParser.T__9) {
+	            this.state = 88;
+	            this.match(ModelParser.T__9);
+	            this.state = 89;
+	            this.match(ModelParser.T__6);
+	            this.state = 90;
+	            this.subscriptList();
+	            this.state = 91;
+	            this.match(ModelParser.T__7);
+	            this.state = 99;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	            while(_la===ModelParser.T__4) {
+	                this.state = 92;
+	                this.match(ModelParser.T__4);
+	                this.state = 93;
+	                this.match(ModelParser.T__6);
+	                this.state = 94;
+	                this.subscriptList();
+	                this.state = 95;
+	                this.match(ModelParser.T__7);
+	                this.state = 101;
+	                this._errHandler.sync(this);
+	                _la = this._input.LA(1);
+	            }
+	        }
+
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+	expr(_p) {
+		if(_p===undefined) {
+		    _p = 0;
+		}
+	    const _parentctx = this._ctx;
+	    const _parentState = this.state;
+	    let localctx = new ExprContext(this, this._ctx, _parentState);
+	    let _prevctx = localctx;
+	    const _startState = 14;
+	    this.enterRecursionRule(localctx, 14, ModelParser.RULE_expr, _p);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 142;
+	        this._errHandler.sync(this);
+	        var la_ = this._interp.adaptivePredict(this._input,15,this._ctx);
+	        switch(la_) {
+	        case 1:
+	            localctx = new CallContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+
+	            this.state = 105;
+	            this.match(ModelParser.Id);
+	            this.state = 106;
+	            this.match(ModelParser.T__1);
+	            this.state = 108;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__10) | (1 << ModelParser.Plus) | (1 << ModelParser.Minus) | (1 << ModelParser.Id))) !== 0) || _la===ModelParser.Const || _la===ModelParser.Keyword) {
+	                this.state = 107;
+	                this.exprList();
+	            }
+
+	            this.state = 110;
+	            this.match(ModelParser.T__2);
+	            break;
+
+	        case 2:
+	            localctx = new LookupCallContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 111;
+	            this.match(ModelParser.Id);
+	            this.state = 116;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	            if(_la===ModelParser.T__6) {
+	                this.state = 112;
+	                this.match(ModelParser.T__6);
+	                this.state = 113;
+	                this.subscriptList();
+	                this.state = 114;
+	                this.match(ModelParser.T__7);
+	            }
+
+	            this.state = 118;
+	            this.match(ModelParser.T__1);
+	            this.state = 119;
+	            this.expr(0);
+	            this.state = 120;
+	            this.match(ModelParser.T__2);
+	            break;
+
+	        case 3:
+	            localctx = new NotContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 122;
+	            this.match(ModelParser.T__10);
+	            this.state = 123;
+	            this.expr(15);
+	            break;
+
+	        case 4:
+	            localctx = new NegativeContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 124;
+	            this.match(ModelParser.Minus);
+	            this.state = 125;
+	            this.expr(14);
+	            break;
+
+	        case 5:
+	            localctx = new PositiveContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 126;
+	            this.match(ModelParser.Plus);
+	            this.state = 127;
+	            this.expr(13);
+	            break;
+
+	        case 6:
+	            localctx = new VarContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 128;
+	            this.match(ModelParser.Id);
+	            this.state = 133;
+	            this._errHandler.sync(this);
+	            var la_ = this._interp.adaptivePredict(this._input,14,this._ctx);
+	            if(la_===1) {
+	                this.state = 129;
+	                this.match(ModelParser.T__6);
+	                this.state = 130;
+	                this.subscriptList();
+	                this.state = 131;
+	                this.match(ModelParser.T__7);
+
+	            }
+	            break;
+
+	        case 7:
+	            localctx = new ConstContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 135;
+	            this.match(ModelParser.Const);
+	            break;
+
+	        case 8:
+	            localctx = new KeywordContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 136;
+	            this.match(ModelParser.Keyword);
+	            break;
+
+	        case 9:
+	            localctx = new LookupArgContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 137;
+	            this.lookup();
+	            break;
+
+	        case 10:
+	            localctx = new ParensContext(this, localctx);
+	            this._ctx = localctx;
+	            _prevctx = localctx;
+	            this.state = 138;
+	            this.match(ModelParser.T__1);
+	            this.state = 139;
+	            this.expr(0);
+	            this.state = 140;
+	            this.match(ModelParser.T__2);
+	            break;
+
+	        }
+	        this._ctx.stop = this._input.LT(-1);
+	        this.state = 167;
+	        this._errHandler.sync(this);
+	        var _alt = this._interp.adaptivePredict(this._input,17,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                if(this._parseListeners!==null) {
+	                    this.triggerExitRuleEvent();
+	                }
+	                _prevctx = localctx;
+	                this.state = 165;
+	                this._errHandler.sync(this);
+	                var la_ = this._interp.adaptivePredict(this._input,16,this._ctx);
+	                switch(la_) {
+	                case 1:
+	                    localctx = new PowerContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 144;
+	                    if (!( this.precpred(this._ctx, 12))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 12)");
+	                    }
+	                    this.state = 145;
+	                    this.match(ModelParser.T__11);
+	                    this.state = 146;
+	                    this.expr(13);
+	                    break;
+
+	                case 2:
+	                    localctx = new MulDivContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 147;
+	                    if (!( this.precpred(this._ctx, 11))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 11)");
+	                    }
+	                    this.state = 148;
+	                    localctx.op = this._input.LT(1);
+	                    _la = this._input.LA(1);
+	                    if(!(_la===ModelParser.Star || _la===ModelParser.Div)) {
+	                        localctx.op = this._errHandler.recoverInline(this);
+	                    }
+	                    else {
+	                    	this._errHandler.reportMatch(this);
+	                        this.consume();
+	                    }
+	                    this.state = 149;
+	                    this.expr(12);
+	                    break;
+
+	                case 3:
+	                    localctx = new AddSubContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 150;
+	                    if (!( this.precpred(this._ctx, 10))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 10)");
+	                    }
+	                    this.state = 151;
+	                    localctx.op = this._input.LT(1);
+	                    _la = this._input.LA(1);
+	                    if(!(_la===ModelParser.Plus || _la===ModelParser.Minus)) {
+	                        localctx.op = this._errHandler.recoverInline(this);
+	                    }
+	                    else {
+	                    	this._errHandler.reportMatch(this);
+	                        this.consume();
+	                    }
+	                    this.state = 152;
+	                    this.expr(11);
+	                    break;
+
+	                case 4:
+	                    localctx = new RelationalContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 153;
+	                    if (!( this.precpred(this._ctx, 9))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 9)");
+	                    }
+	                    this.state = 154;
+	                    localctx.op = this._input.LT(1);
+	                    _la = this._input.LA(1);
+	                    if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.Less) | (1 << ModelParser.LessEqual) | (1 << ModelParser.Greater) | (1 << ModelParser.GreaterEqual))) !== 0))) {
+	                        localctx.op = this._errHandler.recoverInline(this);
+	                    }
+	                    else {
+	                    	this._errHandler.reportMatch(this);
+	                        this.consume();
+	                    }
+	                    this.state = 155;
+	                    this.expr(10);
+	                    break;
+
+	                case 5:
+	                    localctx = new EqualityContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 156;
+	                    if (!( this.precpred(this._ctx, 8))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 8)");
+	                    }
+	                    this.state = 157;
+	                    localctx.op = this._input.LT(1);
+	                    _la = this._input.LA(1);
+	                    if(!(_la===ModelParser.Equal || _la===ModelParser.NotEqual)) {
+	                        localctx.op = this._errHandler.recoverInline(this);
+	                    }
+	                    else {
+	                    	this._errHandler.reportMatch(this);
+	                        this.consume();
+	                    }
+	                    this.state = 158;
+	                    this.expr(9);
+	                    break;
+
+	                case 6:
+	                    localctx = new AndContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 159;
+	                    if (!( this.precpred(this._ctx, 7))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 7)");
+	                    }
+	                    this.state = 160;
+	                    this.match(ModelParser.T__12);
+	                    this.state = 161;
+	                    this.expr(8);
+	                    break;
+
+	                case 7:
+	                    localctx = new OrContext(this, new ExprContext(this, _parentctx, _parentState));
+	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
+	                    this.state = 162;
+	                    if (!( this.precpred(this._ctx, 6))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 6)");
+	                    }
+	                    this.state = 163;
+	                    this.match(ModelParser.T__13);
+	                    this.state = 164;
+	                    this.expr(7);
+	                    break;
+
+	                } 
+	            }
+	            this.state = 169;
+	            this._errHandler.sync(this);
+	            _alt = this._interp.adaptivePredict(this._input,17,this._ctx);
+	        }
+
+	    } catch( error) {
+	        if(error instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = error;
+		        this._errHandler.reportError(this, error);
+		        this._errHandler.recover(this, error);
+		    } else {
+		    	throw error;
+		    }
+	    } finally {
+	        this.unrollRecursionContexts(_parentctx)
+	    }
+	    return localctx;
+	}
+
+
+
+	exprList() {
+	    let localctx = new ExprListContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 16, ModelParser.RULE_exprList);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 170;
+	        this.expr(0);
+	        this.state = 175;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        while(_la===ModelParser.T__4) {
+	            this.state = 171;
+	            this.match(ModelParser.T__4);
+	            this.state = 172;
+	            this.expr(0);
+	            this.state = 177;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	subscriptList() {
+	    let localctx = new SubscriptListContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 18, ModelParser.RULE_subscriptList);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 178;
+	        this.match(ModelParser.Id);
+	        this.state = 183;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        while(_la===ModelParser.T__4) {
+	            this.state = 179;
+	            this.match(ModelParser.T__4);
+	            this.state = 180;
+	            this.match(ModelParser.Id);
+	            this.state = 185;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	lookup() {
+	    let localctx = new LookupContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 20, ModelParser.RULE_lookup);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 186;
+	        this.match(ModelParser.T__1);
+	        this.state = 188;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===ModelParser.T__6) {
+	            this.state = 187;
+	            this.lookupRange();
+	        }
+
+	        this.state = 190;
+	        this.lookupPointList();
+	        this.state = 191;
+	        this.match(ModelParser.T__2);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	lookupRange() {
+	    let localctx = new LookupRangeContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 22, ModelParser.RULE_lookupRange);
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 193;
+	        this.match(ModelParser.T__6);
+	        this.state = 194;
+	        this.lookupPoint();
+	        this.state = 195;
+	        this.match(ModelParser.Minus);
+	        this.state = 196;
+	        this.lookupPoint();
+	        this.state = 197;
+	        this.match(ModelParser.T__7);
+	        this.state = 198;
+	        this.match(ModelParser.T__4);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	lookupPointList() {
+	    let localctx = new LookupPointListContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 24, ModelParser.RULE_lookupPointList);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 200;
+	        this.lookupPoint();
+	        this.state = 205;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        while(_la===ModelParser.T__4) {
+	            this.state = 201;
+	            this.match(ModelParser.T__4);
+	            this.state = 202;
+	            this.lookupPoint();
+	            this.state = 207;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	lookupPoint() {
+	    let localctx = new LookupPointContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 26, ModelParser.RULE_lookupPoint);
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 208;
+	        this.match(ModelParser.T__1);
+	        this.state = 209;
+	        this.expr(0);
+	        this.state = 210;
+	        this.match(ModelParser.T__4);
+	        this.state = 211;
+	        this.expr(0);
+	        this.state = 212;
+	        this.match(ModelParser.T__2);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	constList() {
+	    let localctx = new ConstListContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 28, ModelParser.RULE_constList);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 234;
+	        this._errHandler.sync(this);
+	        var la_ = this._interp.adaptivePredict(this._input,25,this._ctx);
+	        switch(la_) {
+	        case 1:
+	            this.state = 214;
+	            this.expr(0);
+	            this.state = 217; 
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	            do {
+	                this.state = 215;
+	                this.match(ModelParser.T__4);
+	                this.state = 216;
+	                this.expr(0);
+	                this.state = 219; 
+	                this._errHandler.sync(this);
+	                _la = this._input.LA(1);
+	            } while(_la===ModelParser.T__4);
+	            break;
+
+	        case 2:
+	            this.state = 230; 
+	            this._errHandler.sync(this);
+	            var _alt = 1;
+	            do {
+	            	switch (_alt) {
+	            	case 1:
+	            		this.state = 221;
+	            		this.expr(0);
+	            		this.state = 224; 
+	            		this._errHandler.sync(this);
+	            		_la = this._input.LA(1);
+	            		do {
+	            		    this.state = 222;
+	            		    this.match(ModelParser.T__4);
+	            		    this.state = 223;
+	            		    this.expr(0);
+	            		    this.state = 226; 
+	            		    this._errHandler.sync(this);
+	            		    _la = this._input.LA(1);
+	            		} while(_la===ModelParser.T__4);
+	            		this.state = 228;
+	            		this.match(ModelParser.T__14);
+	            		break;
+	            	default:
+	            		throw new antlr4.error.NoViableAltException(this);
+	            	}
+	            	this.state = 232; 
+	            	this._errHandler.sync(this);
+	            	_alt = this._interp.adaptivePredict(this._input,24, this._ctx);
+	            } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
+	            break;
+
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+}
 
 ModelParser.EOF = antlr4.Token.EOF;
 ModelParser.T__0 = 1;
@@ -258,2104 +1227,1136 @@ ModelParser.RULE_lookupPointList = 12;
 ModelParser.RULE_lookupPoint = 13;
 ModelParser.RULE_constList = 14;
 
+class ModelContext extends antlr4.ParserRuleContext {
 
-function ModelContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_model;
-    return this;
-}
-
-ModelContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-ModelContext.prototype.constructor = ModelContext;
-
-ModelContext.prototype.subscriptRange = function(i) {
-    if(i===undefined) {
-        i = null;
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_model;
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(SubscriptRangeContext);
-    } else {
-        return this.getTypedRuleContext(SubscriptRangeContext,i);
-    }
-};
 
-ModelContext.prototype.equation = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(EquationContext);
-    } else {
-        return this.getTypedRuleContext(EquationContext,i);
-    }
-};
-
-ModelContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitModel(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.ModelContext = ModelContext;
-
-ModelParser.prototype.model = function() {
-
-    var localctx = new ModelContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 0, ModelParser.RULE_model);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 32; 
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        do {
-            this.state = 32;
-            this._errHandler.sync(this);
-            var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
-            switch(la_) {
-            case 1:
-                this.state = 30;
-                this.subscriptRange();
-                break;
-
-            case 2:
-                this.state = 31;
-                this.equation();
-                break;
-
-            }
-            this.state = 34; 
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-        } while(_la===ModelParser.Id);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
+	subscriptRange = function(i) {
+	    if(i===undefined) {
+	        i = null;
 	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-
-function SubscriptRangeContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_subscriptRange;
-    return this;
-}
-
-SubscriptRangeContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-SubscriptRangeContext.prototype.constructor = SubscriptRangeContext;
-
-SubscriptRangeContext.prototype.Id = function() {
-    return this.getToken(ModelParser.Id, 0);
-};
-
-SubscriptRangeContext.prototype.subscriptList = function() {
-    return this.getTypedRuleContext(SubscriptListContext,0);
-};
-
-SubscriptRangeContext.prototype.subscriptSequence = function() {
-    return this.getTypedRuleContext(SubscriptSequenceContext,0);
-};
-
-SubscriptRangeContext.prototype.subscriptMappingList = function() {
-    return this.getTypedRuleContext(SubscriptMappingListContext,0);
-};
-
-SubscriptRangeContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitSubscriptRange(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.SubscriptRangeContext = SubscriptRangeContext;
-
-ModelParser.prototype.subscriptRange = function() {
-
-    var localctx = new SubscriptRangeContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 2, ModelParser.RULE_subscriptRange);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 36;
-        this.match(ModelParser.Id);
-        this.state = 37;
-        this.match(ModelParser.T__0);
-        this.state = 40;
-        this._errHandler.sync(this);
-        switch(this._input.LA(1)) {
-        case ModelParser.Id:
-            this.state = 38;
-            this.subscriptList();
-            break;
-        case ModelParser.T__1:
-            this.state = 39;
-            this.subscriptSequence();
-            break;
-        default:
-            throw new antlr4.error.NoViableAltException(this);
-        }
-        this.state = 43;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        if(_la===ModelParser.T__3) {
-            this.state = 42;
-            this.subscriptMappingList();
-        }
-
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+	    if(i===null) {
+	        return this.getTypedRuleContexts(SubscriptRangeContext);
 	    } else {
-	    	throw re;
+	        return this.getTypedRuleContext(SubscriptRangeContext,i);
 	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
+	};
 
-
-function SubscriptSequenceContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_subscriptSequence;
-    return this;
-}
-
-SubscriptSequenceContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-SubscriptSequenceContext.prototype.constructor = SubscriptSequenceContext;
-
-SubscriptSequenceContext.prototype.Id = function(i) {
-	if(i===undefined) {
-		i = null;
-	}
-    if(i===null) {
-        return this.getTokens(ModelParser.Id);
-    } else {
-        return this.getToken(ModelParser.Id, i);
-    }
-};
-
-
-SubscriptSequenceContext.prototype.Minus = function() {
-    return this.getToken(ModelParser.Minus, 0);
-};
-
-SubscriptSequenceContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitSubscriptSequence(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.SubscriptSequenceContext = SubscriptSequenceContext;
-
-ModelParser.prototype.subscriptSequence = function() {
-
-    var localctx = new SubscriptSequenceContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 4, ModelParser.RULE_subscriptSequence);
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 45;
-        this.match(ModelParser.T__1);
-        this.state = 46;
-        this.match(ModelParser.Id);
-        this.state = 47;
-        this.match(ModelParser.Minus);
-        this.state = 48;
-        this.match(ModelParser.Id);
-        this.state = 49;
-        this.match(ModelParser.T__2);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+	equation = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(EquationContext);
 	    } else {
-	    	throw re;
+	        return this.getTypedRuleContext(EquationContext,i);
 	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
+	};
 
-
-function SubscriptMappingListContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_subscriptMappingList;
-    return this;
-}
-
-SubscriptMappingListContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-SubscriptMappingListContext.prototype.constructor = SubscriptMappingListContext;
-
-SubscriptMappingListContext.prototype.subscriptMapping = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(SubscriptMappingContext);
-    } else {
-        return this.getTypedRuleContext(SubscriptMappingContext,i);
-    }
-};
-
-SubscriptMappingListContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitSubscriptMappingList(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.SubscriptMappingListContext = SubscriptMappingListContext;
-
-ModelParser.prototype.subscriptMappingList = function() {
-
-    var localctx = new SubscriptMappingListContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 6, ModelParser.RULE_subscriptMappingList);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 51;
-        this.match(ModelParser.T__3);
-        this.state = 52;
-        this.subscriptMapping();
-        this.state = 57;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        while(_la===ModelParser.T__4) {
-            this.state = 53;
-            this.match(ModelParser.T__4);
-            this.state = 54;
-            this.subscriptMapping();
-            this.state = 59;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-        }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitModel(this);
 	    } else {
-	    	throw re;
+	        return visitor.visitChildren(this);
 	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
+	}
 
 
-function SubscriptMappingContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_subscriptMapping;
-    return this;
 }
 
-SubscriptMappingContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-SubscriptMappingContext.prototype.constructor = SubscriptMappingContext;
-
-SubscriptMappingContext.prototype.Id = function() {
-    return this.getToken(ModelParser.Id, 0);
-};
-
-SubscriptMappingContext.prototype.subscriptList = function() {
-    return this.getTypedRuleContext(SubscriptListContext,0);
-};
-
-SubscriptMappingContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitSubscriptMapping(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
 
 
+class SubscriptRangeContext extends antlr4.ParserRuleContext {
 
-
-ModelParser.SubscriptMappingContext = SubscriptMappingContext;
-
-ModelParser.prototype.subscriptMapping = function() {
-
-    var localctx = new SubscriptMappingContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 8, ModelParser.RULE_subscriptMapping);
-    try {
-        this.state = 67;
-        this._errHandler.sync(this);
-        switch(this._input.LA(1)) {
-        case ModelParser.Id:
-            this.enterOuterAlt(localctx, 1);
-            this.state = 60;
-            this.match(ModelParser.Id);
-            break;
-        case ModelParser.T__1:
-            this.enterOuterAlt(localctx, 2);
-            this.state = 61;
-            this.match(ModelParser.T__1);
-            this.state = 62;
-            this.match(ModelParser.Id);
-            this.state = 63;
-            this.match(ModelParser.T__0);
-            this.state = 64;
-            this.subscriptList();
-            this.state = 65;
-            this.match(ModelParser.T__2);
-            break;
-        default:
-            throw new antlr4.error.NoViableAltException(this);
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_subscriptRange;
+    }
+
+	Id() {
+	    return this.getToken(ModelParser.Id, 0);
+	};
+
+	subscriptList() {
+	    return this.getTypedRuleContext(SubscriptListContext,0);
+	};
+
+	subscriptSequence() {
+	    return this.getTypedRuleContext(SubscriptSequenceContext,0);
+	};
+
+	subscriptMappingList() {
+	    return this.getTypedRuleContext(SubscriptMappingListContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitSubscriptRange(this);
 	    } else {
-	    	throw re;
+	        return visitor.visitChildren(this);
 	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
+	}
 
 
-function EquationContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_equation;
-    return this;
 }
 
-EquationContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-EquationContext.prototype.constructor = EquationContext;
-
-EquationContext.prototype.lhs = function() {
-    return this.getTypedRuleContext(LhsContext,0);
-};
-
-EquationContext.prototype.lookup = function() {
-    return this.getTypedRuleContext(LookupContext,0);
-};
-
-EquationContext.prototype.TwoEqual = function() {
-    return this.getToken(ModelParser.TwoEqual, 0);
-};
-
-EquationContext.prototype.Equal = function() {
-    return this.getToken(ModelParser.Equal, 0);
-};
-
-EquationContext.prototype.expr = function() {
-    return this.getTypedRuleContext(ExprContext,0);
-};
-
-EquationContext.prototype.constList = function() {
-    return this.getTypedRuleContext(ConstListContext,0);
-};
-
-EquationContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitEquation(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
 
 
+class SubscriptSequenceContext extends antlr4.ParserRuleContext {
 
-
-ModelParser.EquationContext = EquationContext;
-
-ModelParser.prototype.equation = function() {
-
-    var localctx = new EquationContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 10, ModelParser.RULE_equation);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 69;
-        this.lhs();
-        this.state = 76;
-        this._errHandler.sync(this);
-        switch (this._input.LA(1)) {
-        case ModelParser.T__5:
-        case ModelParser.Equal:
-        case ModelParser.TwoEqual:
-        	this.state = 70;
-        	_la = this._input.LA(1);
-        	if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.T__5) | (1 << ModelParser.Equal) | (1 << ModelParser.TwoEqual))) !== 0))) {
-        	this._errHandler.recoverInline(this);
-        	}
-        	else {
-        		this._errHandler.reportMatch(this);
-        	    this.consume();
-        	}
-        	this.state = 73;
-        	this._errHandler.sync(this);
-        	var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
-        	switch(la_) {
-        	case 1:
-        	    this.state = 71;
-        	    this.expr(0);
-        	    break;
-
-        	case 2:
-        	    this.state = 72;
-        	    this.constList();
-        	    break;
-
-        	}
-        	break;
-        case ModelParser.T__1:
-        	this.state = 75;
-        	this.lookup();
-        	break;
-        case ModelParser.EOF:
-        case ModelParser.Id:
-        	break;
-        default:
-        	break;
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_subscriptSequence;
+    }
+
+	Id = function(i) {
+		if(i===undefined) {
+			i = null;
+		}
+	    if(i===null) {
+	        return this.getTokens(ModelParser.Id);
 	    } else {
-	    	throw re;
+	        return this.getToken(ModelParser.Id, i);
 	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
+	};
 
 
-function LhsContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_lhs;
-    return this;
-}
+	Minus() {
+	    return this.getToken(ModelParser.Minus, 0);
+	};
 
-LhsContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-LhsContext.prototype.constructor = LhsContext;
-
-LhsContext.prototype.Id = function() {
-    return this.getToken(ModelParser.Id, 0);
-};
-
-LhsContext.prototype.subscriptList = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(SubscriptListContext);
-    } else {
-        return this.getTypedRuleContext(SubscriptListContext,i);
-    }
-};
-
-LhsContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLhs(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.LhsContext = LhsContext;
-
-ModelParser.prototype.lhs = function() {
-
-    var localctx = new LhsContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 12, ModelParser.RULE_lhs);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 78;
-        this.match(ModelParser.Id);
-        this.state = 83;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        if(_la===ModelParser.T__6) {
-            this.state = 79;
-            this.match(ModelParser.T__6);
-            this.state = 80;
-            this.subscriptList();
-            this.state = 81;
-            this.match(ModelParser.T__7);
-        }
-
-        this.state = 86;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        if(_la===ModelParser.T__8) {
-            this.state = 85;
-            this.match(ModelParser.T__8);
-        }
-
-        this.state = 102;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        if(_la===ModelParser.T__9) {
-            this.state = 88;
-            this.match(ModelParser.T__9);
-            this.state = 89;
-            this.match(ModelParser.T__6);
-            this.state = 90;
-            this.subscriptList();
-            this.state = 91;
-            this.match(ModelParser.T__7);
-            this.state = 99;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-            while(_la===ModelParser.T__4) {
-                this.state = 92;
-                this.match(ModelParser.T__4);
-                this.state = 93;
-                this.match(ModelParser.T__6);
-                this.state = 94;
-                this.subscriptList();
-                this.state = 95;
-                this.match(ModelParser.T__7);
-                this.state = 101;
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-            }
-        }
-
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitSubscriptSequence(this);
 	    } else {
-	    	throw re;
+	        return visitor.visitChildren(this);
 	    }
-    } finally {
-        this.exitRule();
+	}
+
+
+}
+
+
+
+class SubscriptMappingListContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_subscriptMappingList;
     }
-    return localctx;
-};
+
+	subscriptMapping = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(SubscriptMappingContext);
+	    } else {
+	        return this.getTypedRuleContext(SubscriptMappingContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitSubscriptMappingList(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function ExprContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_expr;
-    return this;
 }
 
-ExprContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-ExprContext.prototype.constructor = ExprContext;
 
 
- 
-ExprContext.prototype.copyFrom = function(ctx) {
-    antlr4.ParserRuleContext.prototype.copyFrom.call(this, ctx);
-};
+class SubscriptMappingContext extends antlr4.ParserRuleContext {
 
-function CallContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_subscriptMapping;
+    }
+
+	Id() {
+	    return this.getToken(ModelParser.Id, 0);
+	};
+
+	subscriptList() {
+	    return this.getTypedRuleContext(SubscriptListContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitSubscriptMapping(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
 }
 
-CallContext.prototype = Object.create(ExprContext.prototype);
-CallContext.prototype.constructor = CallContext;
+
+
+class EquationContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_equation;
+    }
+
+	lhs() {
+	    return this.getTypedRuleContext(LhsContext,0);
+	};
+
+	lookup() {
+	    return this.getTypedRuleContext(LookupContext,0);
+	};
+
+	TwoEqual() {
+	    return this.getToken(ModelParser.TwoEqual, 0);
+	};
+
+	Equal() {
+	    return this.getToken(ModelParser.Equal, 0);
+	};
+
+	expr() {
+	    return this.getTypedRuleContext(ExprContext,0);
+	};
+
+	constList() {
+	    return this.getTypedRuleContext(ConstListContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitEquation(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
+class LhsContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_lhs;
+    }
+
+	Id() {
+	    return this.getToken(ModelParser.Id, 0);
+	};
+
+	subscriptList = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(SubscriptListContext);
+	    } else {
+	        return this.getTypedRuleContext(SubscriptListContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLhs(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
+class ExprContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_expr;
+    }
+
+
+	 
+		copyFrom(ctx) {
+			super.copyFrom(ctx);
+		}
+
+}
+
+
+class CallContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
+    }
+
+	Id() {
+	    return this.getToken(ModelParser.Id, 0);
+	};
+
+	exprList() {
+	    return this.getTypedRuleContext(ExprListContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitCall(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
 
 ModelParser.CallContext = CallContext;
 
-CallContext.prototype.Id = function() {
-    return this.getToken(ModelParser.Id, 0);
-};
+class OrContext extends ExprContext {
 
-CallContext.prototype.exprList = function() {
-    return this.getTypedRuleContext(ExprListContext,0);
-};
-CallContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitCall(this);
-    } else {
-        return visitor.visitChildren(this);
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitOr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function OrContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-OrContext.prototype = Object.create(ExprContext.prototype);
-OrContext.prototype.constructor = OrContext;
 
 ModelParser.OrContext = OrContext;
 
-OrContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
+class KeywordContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
-OrContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitOr(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+
+	Keyword() {
+	    return this.getToken(ModelParser.Keyword, 0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitKeyword(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function KeywordContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-KeywordContext.prototype = Object.create(ExprContext.prototype);
-KeywordContext.prototype.constructor = KeywordContext;
 
 ModelParser.KeywordContext = KeywordContext;
 
-KeywordContext.prototype.Keyword = function() {
-    return this.getToken(ModelParser.Keyword, 0);
-};
-KeywordContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitKeyword(this);
-    } else {
-        return visitor.visitChildren(this);
+class MulDivContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        this.op = null; // Token;
+        super.copyFrom(ctx);
     }
-};
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	Star() {
+	    return this.getToken(ModelParser.Star, 0);
+	};
+
+	Div() {
+	    return this.getToken(ModelParser.Div, 0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitMulDiv(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function MulDivContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    this.op = null; // Token;
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-MulDivContext.prototype = Object.create(ExprContext.prototype);
-MulDivContext.prototype.constructor = MulDivContext;
 
 ModelParser.MulDivContext = MulDivContext;
 
-MulDivContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
+class AddSubContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        this.op = null; // Token;
+        super.copyFrom(ctx);
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
 
-MulDivContext.prototype.Star = function() {
-    return this.getToken(ModelParser.Star, 0);
-};
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
 
-MulDivContext.prototype.Div = function() {
-    return this.getToken(ModelParser.Div, 0);
-};
-MulDivContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitMulDiv(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+	Plus() {
+	    return this.getToken(ModelParser.Plus, 0);
+	};
+
+	Minus() {
+	    return this.getToken(ModelParser.Minus, 0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitAddSub(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function AddSubContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    this.op = null; // Token;
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-AddSubContext.prototype = Object.create(ExprContext.prototype);
-AddSubContext.prototype.constructor = AddSubContext;
 
 ModelParser.AddSubContext = AddSubContext;
 
-AddSubContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
+class VarContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
 
-AddSubContext.prototype.Plus = function() {
-    return this.getToken(ModelParser.Plus, 0);
-};
+	Id() {
+	    return this.getToken(ModelParser.Id, 0);
+	};
 
-AddSubContext.prototype.Minus = function() {
-    return this.getToken(ModelParser.Minus, 0);
-};
-AddSubContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitAddSub(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+	subscriptList() {
+	    return this.getTypedRuleContext(SubscriptListContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitVar(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function VarContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-VarContext.prototype = Object.create(ExprContext.prototype);
-VarContext.prototype.constructor = VarContext;
 
 ModelParser.VarContext = VarContext;
 
-VarContext.prototype.Id = function() {
-    return this.getToken(ModelParser.Id, 0);
-};
+class ParensContext extends ExprContext {
 
-VarContext.prototype.subscriptList = function() {
-    return this.getTypedRuleContext(SubscriptListContext,0);
-};
-VarContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitVar(this);
-    } else {
-        return visitor.visitChildren(this);
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	expr() {
+	    return this.getTypedRuleContext(ExprContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitParens(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function ParensContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-ParensContext.prototype = Object.create(ExprContext.prototype);
-ParensContext.prototype.constructor = ParensContext;
 
 ModelParser.ParensContext = ParensContext;
 
-ParensContext.prototype.expr = function() {
-    return this.getTypedRuleContext(ExprContext,0);
-};
-ParensContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitParens(this);
-    } else {
-        return visitor.visitChildren(this);
+class ConstContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	Const() {
+	    return this.getToken(ModelParser.Const, 0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitConst(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function ConstContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-ConstContext.prototype = Object.create(ExprContext.prototype);
-ConstContext.prototype.constructor = ConstContext;
 
 ModelParser.ConstContext = ConstContext;
 
-ConstContext.prototype.Const = function() {
-    return this.getToken(ModelParser.Const, 0);
-};
-ConstContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitConst(this);
-    } else {
-        return visitor.visitChildren(this);
+class RelationalContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        this.op = null; // Token;
+        super.copyFrom(ctx);
     }
-};
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	Less() {
+	    return this.getToken(ModelParser.Less, 0);
+	};
+
+	Greater() {
+	    return this.getToken(ModelParser.Greater, 0);
+	};
+
+	LessEqual() {
+	    return this.getToken(ModelParser.LessEqual, 0);
+	};
+
+	GreaterEqual() {
+	    return this.getToken(ModelParser.GreaterEqual, 0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitRelational(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function RelationalContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    this.op = null; // Token;
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-RelationalContext.prototype = Object.create(ExprContext.prototype);
-RelationalContext.prototype.constructor = RelationalContext;
 
 ModelParser.RelationalContext = RelationalContext;
 
-RelationalContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
+class LookupCallContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
 
-RelationalContext.prototype.Less = function() {
-    return this.getToken(ModelParser.Less, 0);
-};
+	Id() {
+	    return this.getToken(ModelParser.Id, 0);
+	};
 
-RelationalContext.prototype.Greater = function() {
-    return this.getToken(ModelParser.Greater, 0);
-};
+	expr() {
+	    return this.getTypedRuleContext(ExprContext,0);
+	};
 
-RelationalContext.prototype.LessEqual = function() {
-    return this.getToken(ModelParser.LessEqual, 0);
-};
+	subscriptList() {
+	    return this.getTypedRuleContext(SubscriptListContext,0);
+	};
 
-RelationalContext.prototype.GreaterEqual = function() {
-    return this.getToken(ModelParser.GreaterEqual, 0);
-};
-RelationalContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitRelational(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLookupCall(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function LookupCallContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-LookupCallContext.prototype = Object.create(ExprContext.prototype);
-LookupCallContext.prototype.constructor = LookupCallContext;
 
 ModelParser.LookupCallContext = LookupCallContext;
 
-LookupCallContext.prototype.Id = function() {
-    return this.getToken(ModelParser.Id, 0);
-};
+class NotContext extends ExprContext {
 
-LookupCallContext.prototype.expr = function() {
-    return this.getTypedRuleContext(ExprContext,0);
-};
-
-LookupCallContext.prototype.subscriptList = function() {
-    return this.getTypedRuleContext(SubscriptListContext,0);
-};
-LookupCallContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLookupCall(this);
-    } else {
-        return visitor.visitChildren(this);
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	expr() {
+	    return this.getTypedRuleContext(ExprContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitNot(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function NotContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-NotContext.prototype = Object.create(ExprContext.prototype);
-NotContext.prototype.constructor = NotContext;
 
 ModelParser.NotContext = NotContext;
 
-NotContext.prototype.expr = function() {
-    return this.getTypedRuleContext(ExprContext,0);
-};
-NotContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitNot(this);
-    } else {
-        return visitor.visitChildren(this);
+class NegativeContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	Minus() {
+	    return this.getToken(ModelParser.Minus, 0);
+	};
+
+	expr() {
+	    return this.getTypedRuleContext(ExprContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitNegative(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function NegativeContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-NegativeContext.prototype = Object.create(ExprContext.prototype);
-NegativeContext.prototype.constructor = NegativeContext;
 
 ModelParser.NegativeContext = NegativeContext;
 
-NegativeContext.prototype.Minus = function() {
-    return this.getToken(ModelParser.Minus, 0);
-};
+class PositiveContext extends ExprContext {
 
-NegativeContext.prototype.expr = function() {
-    return this.getTypedRuleContext(ExprContext,0);
-};
-NegativeContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitNegative(this);
-    } else {
-        return visitor.visitChildren(this);
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	Plus() {
+	    return this.getToken(ModelParser.Plus, 0);
+	};
+
+	expr() {
+	    return this.getTypedRuleContext(ExprContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitPositive(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function PositiveContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-PositiveContext.prototype = Object.create(ExprContext.prototype);
-PositiveContext.prototype.constructor = PositiveContext;
 
 ModelParser.PositiveContext = PositiveContext;
 
-PositiveContext.prototype.Plus = function() {
-    return this.getToken(ModelParser.Plus, 0);
-};
+class AndContext extends ExprContext {
 
-PositiveContext.prototype.expr = function() {
-    return this.getTypedRuleContext(ExprContext,0);
-};
-PositiveContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitPositive(this);
-    } else {
-        return visitor.visitChildren(this);
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitAnd(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function AndContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-AndContext.prototype = Object.create(ExprContext.prototype);
-AndContext.prototype.constructor = AndContext;
 
 ModelParser.AndContext = AndContext;
 
-AndContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
+class EqualityContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        this.op = null; // Token;
+        super.copyFrom(ctx);
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
-AndContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitAnd(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	Equal() {
+	    return this.getToken(ModelParser.Equal, 0);
+	};
+
+	NotEqual() {
+	    return this.getToken(ModelParser.NotEqual, 0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitEquality(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function EqualityContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    this.op = null; // Token;
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-EqualityContext.prototype = Object.create(ExprContext.prototype);
-EqualityContext.prototype.constructor = EqualityContext;
 
 ModelParser.EqualityContext = EqualityContext;
 
-EqualityContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
+class LookupArgContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
 
-EqualityContext.prototype.Equal = function() {
-    return this.getToken(ModelParser.Equal, 0);
-};
+	lookup() {
+	    return this.getTypedRuleContext(LookupContext,0);
+	};
 
-EqualityContext.prototype.NotEqual = function() {
-    return this.getToken(ModelParser.NotEqual, 0);
-};
-EqualityContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitEquality(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLookupArg(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function LookupArgContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-LookupArgContext.prototype = Object.create(ExprContext.prototype);
-LookupArgContext.prototype.constructor = LookupArgContext;
 
 ModelParser.LookupArgContext = LookupArgContext;
 
-LookupArgContext.prototype.lookup = function() {
-    return this.getTypedRuleContext(LookupContext,0);
-};
-LookupArgContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLookupArg(this);
-    } else {
-        return visitor.visitChildren(this);
+class PowerContext extends ExprContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
     }
-};
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitPower(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function PowerContext(parser, ctx) {
-	ExprContext.call(this, parser);
-    ExprContext.prototype.copyFrom.call(this, ctx);
-    return this;
 }
-
-PowerContext.prototype = Object.create(ExprContext.prototype);
-PowerContext.prototype.constructor = PowerContext;
 
 ModelParser.PowerContext = PowerContext;
 
-PowerContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
-PowerContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitPower(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
+class ExprListContext extends antlr4.ParserRuleContext {
 
-
-
-ModelParser.prototype.expr = function(_p) {
-	if(_p===undefined) {
-	    _p = 0;
-	}
-    var _parentctx = this._ctx;
-    var _parentState = this.state;
-    var localctx = new ExprContext(this, this._ctx, _parentState);
-    var _prevctx = localctx;
-    var _startState = 14;
-    this.enterRecursionRule(localctx, 14, ModelParser.RULE_expr, _p);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 142;
-        this._errHandler.sync(this);
-        var la_ = this._interp.adaptivePredict(this._input,15,this._ctx);
-        switch(la_) {
-        case 1:
-            localctx = new CallContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-
-            this.state = 105;
-            this.match(ModelParser.Id);
-            this.state = 106;
-            this.match(ModelParser.T__1);
-            this.state = 108;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__10) | (1 << ModelParser.Plus) | (1 << ModelParser.Minus) | (1 << ModelParser.Id))) !== 0) || _la===ModelParser.Const || _la===ModelParser.Keyword) {
-                this.state = 107;
-                this.exprList();
-            }
-
-            this.state = 110;
-            this.match(ModelParser.T__2);
-            break;
-
-        case 2:
-            localctx = new LookupCallContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 111;
-            this.match(ModelParser.Id);
-            this.state = 116;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-            if(_la===ModelParser.T__6) {
-                this.state = 112;
-                this.match(ModelParser.T__6);
-                this.state = 113;
-                this.subscriptList();
-                this.state = 114;
-                this.match(ModelParser.T__7);
-            }
-
-            this.state = 118;
-            this.match(ModelParser.T__1);
-            this.state = 119;
-            this.expr(0);
-            this.state = 120;
-            this.match(ModelParser.T__2);
-            break;
-
-        case 3:
-            localctx = new NotContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 122;
-            this.match(ModelParser.T__10);
-            this.state = 123;
-            this.expr(15);
-            break;
-
-        case 4:
-            localctx = new NegativeContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 124;
-            this.match(ModelParser.Minus);
-            this.state = 125;
-            this.expr(14);
-            break;
-
-        case 5:
-            localctx = new PositiveContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 126;
-            this.match(ModelParser.Plus);
-            this.state = 127;
-            this.expr(13);
-            break;
-
-        case 6:
-            localctx = new VarContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 128;
-            this.match(ModelParser.Id);
-            this.state = 133;
-            this._errHandler.sync(this);
-            var la_ = this._interp.adaptivePredict(this._input,14,this._ctx);
-            if(la_===1) {
-                this.state = 129;
-                this.match(ModelParser.T__6);
-                this.state = 130;
-                this.subscriptList();
-                this.state = 131;
-                this.match(ModelParser.T__7);
-
-            }
-            break;
-
-        case 7:
-            localctx = new ConstContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 135;
-            this.match(ModelParser.Const);
-            break;
-
-        case 8:
-            localctx = new KeywordContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 136;
-            this.match(ModelParser.Keyword);
-            break;
-
-        case 9:
-            localctx = new LookupArgContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 137;
-            this.lookup();
-            break;
-
-        case 10:
-            localctx = new ParensContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 138;
-            this.match(ModelParser.T__1);
-            this.state = 139;
-            this.expr(0);
-            this.state = 140;
-            this.match(ModelParser.T__2);
-            break;
-
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
         }
-        this._ctx.stop = this._input.LT(-1);
-        this.state = 167;
-        this._errHandler.sync(this);
-        var _alt = this._interp.adaptivePredict(this._input,17,this._ctx)
-        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
-            if(_alt===1) {
-                if(this._parseListeners!==null) {
-                    this.triggerExitRuleEvent();
-                }
-                _prevctx = localctx;
-                this.state = 165;
-                this._errHandler.sync(this);
-                var la_ = this._interp.adaptivePredict(this._input,16,this._ctx);
-                switch(la_) {
-                case 1:
-                    localctx = new PowerContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 144;
-                    if (!( this.precpred(this._ctx, 12))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 12)");
-                    }
-                    this.state = 145;
-                    this.match(ModelParser.T__11);
-                    this.state = 146;
-                    this.expr(13);
-                    break;
-
-                case 2:
-                    localctx = new MulDivContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 147;
-                    if (!( this.precpred(this._ctx, 11))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 11)");
-                    }
-                    this.state = 148;
-                    localctx.op = this._input.LT(1);
-                    _la = this._input.LA(1);
-                    if(!(_la===ModelParser.Star || _la===ModelParser.Div)) {
-                        localctx.op = this._errHandler.recoverInline(this);
-                    }
-                    else {
-                    	this._errHandler.reportMatch(this);
-                        this.consume();
-                    }
-                    this.state = 149;
-                    this.expr(12);
-                    break;
-
-                case 3:
-                    localctx = new AddSubContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 150;
-                    if (!( this.precpred(this._ctx, 10))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 10)");
-                    }
-                    this.state = 151;
-                    localctx.op = this._input.LT(1);
-                    _la = this._input.LA(1);
-                    if(!(_la===ModelParser.Plus || _la===ModelParser.Minus)) {
-                        localctx.op = this._errHandler.recoverInline(this);
-                    }
-                    else {
-                    	this._errHandler.reportMatch(this);
-                        this.consume();
-                    }
-                    this.state = 152;
-                    this.expr(11);
-                    break;
-
-                case 4:
-                    localctx = new RelationalContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 153;
-                    if (!( this.precpred(this._ctx, 9))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 9)");
-                    }
-                    this.state = 154;
-                    localctx.op = this._input.LT(1);
-                    _la = this._input.LA(1);
-                    if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ModelParser.Less) | (1 << ModelParser.LessEqual) | (1 << ModelParser.Greater) | (1 << ModelParser.GreaterEqual))) !== 0))) {
-                        localctx.op = this._errHandler.recoverInline(this);
-                    }
-                    else {
-                    	this._errHandler.reportMatch(this);
-                        this.consume();
-                    }
-                    this.state = 155;
-                    this.expr(10);
-                    break;
-
-                case 5:
-                    localctx = new EqualityContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 156;
-                    if (!( this.precpred(this._ctx, 8))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 8)");
-                    }
-                    this.state = 157;
-                    localctx.op = this._input.LT(1);
-                    _la = this._input.LA(1);
-                    if(!(_la===ModelParser.Equal || _la===ModelParser.NotEqual)) {
-                        localctx.op = this._errHandler.recoverInline(this);
-                    }
-                    else {
-                    	this._errHandler.reportMatch(this);
-                        this.consume();
-                    }
-                    this.state = 158;
-                    this.expr(9);
-                    break;
-
-                case 6:
-                    localctx = new AndContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 159;
-                    if (!( this.precpred(this._ctx, 7))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 7)");
-                    }
-                    this.state = 160;
-                    this.match(ModelParser.T__12);
-                    this.state = 161;
-                    this.expr(8);
-                    break;
-
-                case 7:
-                    localctx = new OrContext(this, new ExprContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
-                    this.state = 162;
-                    if (!( this.precpred(this._ctx, 6))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 6)");
-                    }
-                    this.state = 163;
-                    this.match(ModelParser.T__13);
-                    this.state = 164;
-                    this.expr(7);
-                    break;
-
-                } 
-            }
-            this.state = 169;
-            this._errHandler.sync(this);
-            _alt = this._interp.adaptivePredict(this._input,17,this._ctx);
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
         }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_exprList;
+    }
 
-    } catch( error) {
-        if(error instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = error;
-	        this._errHandler.reportError(this, error);
-	        this._errHandler.recover(this, error);
-	    } else {
-	    	throw error;
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
 	    }
-    } finally {
-        this.unrollRecursionContexts(_parentctx)
-    }
-    return localctx;
-};
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitExprList(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function ExprListContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_exprList;
-    return this;
 }
 
-ExprListContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-ExprListContext.prototype.constructor = ExprListContext;
-
-ExprListContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
-
-ExprListContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitExprList(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
 
 
+class SubscriptListContext extends antlr4.ParserRuleContext {
 
-
-ModelParser.ExprListContext = ExprListContext;
-
-ModelParser.prototype.exprList = function() {
-
-    var localctx = new ExprListContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 16, ModelParser.RULE_exprList);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 170;
-        this.expr(0);
-        this.state = 175;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        while(_la===ModelParser.T__4) {
-            this.state = 171;
-            this.match(ModelParser.T__4);
-            this.state = 172;
-            this.expr(0);
-            this.state = 177;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-
-function SubscriptListContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_subscriptList;
-    return this;
-}
-
-SubscriptListContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-SubscriptListContext.prototype.constructor = SubscriptListContext;
-
-SubscriptListContext.prototype.Id = function(i) {
-	if(i===undefined) {
-		i = null;
-	}
-    if(i===null) {
-        return this.getTokens(ModelParser.Id);
-    } else {
-        return this.getToken(ModelParser.Id, i);
-    }
-};
-
-
-SubscriptListContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitSubscriptList(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.SubscriptListContext = SubscriptListContext;
-
-ModelParser.prototype.subscriptList = function() {
-
-    var localctx = new SubscriptListContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 18, ModelParser.RULE_subscriptList);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 178;
-        this.match(ModelParser.Id);
-        this.state = 183;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        while(_la===ModelParser.T__4) {
-            this.state = 179;
-            this.match(ModelParser.T__4);
-            this.state = 180;
-            this.match(ModelParser.Id);
-            this.state = 185;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_subscriptList;
     }
-    return localctx;
-};
+
+	Id = function(i) {
+		if(i===undefined) {
+			i = null;
+		}
+	    if(i===null) {
+	        return this.getTokens(ModelParser.Id);
+	    } else {
+	        return this.getToken(ModelParser.Id, i);
+	    }
+	};
 
 
-function LookupContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitSubscriptList(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_lookup;
-    return this;
+
+
 }
 
-LookupContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-LookupContext.prototype.constructor = LookupContext;
-
-LookupContext.prototype.lookupPointList = function() {
-    return this.getTypedRuleContext(LookupPointListContext,0);
-};
-
-LookupContext.prototype.lookupRange = function() {
-    return this.getTypedRuleContext(LookupRangeContext,0);
-};
-
-LookupContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLookup(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
 
 
+class LookupContext extends antlr4.ParserRuleContext {
 
-
-ModelParser.LookupContext = LookupContext;
-
-ModelParser.prototype.lookup = function() {
-
-    var localctx = new LookupContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 20, ModelParser.RULE_lookup);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 186;
-        this.match(ModelParser.T__1);
-        this.state = 188;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        if(_la===ModelParser.T__6) {
-            this.state = 187;
-            this.lookupRange();
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
         }
-
-        this.state = 190;
-        this.lookupPointList();
-        this.state = 191;
-        this.match(ModelParser.T__2);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-
-function LookupRangeContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_lookupRange;
-    return this;
-}
-
-LookupRangeContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-LookupRangeContext.prototype.constructor = LookupRangeContext;
-
-LookupRangeContext.prototype.lookupPoint = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(LookupPointContext);
-    } else {
-        return this.getTypedRuleContext(LookupPointContext,i);
-    }
-};
-
-LookupRangeContext.prototype.Minus = function() {
-    return this.getToken(ModelParser.Minus, 0);
-};
-
-LookupRangeContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLookupRange(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.LookupRangeContext = LookupRangeContext;
-
-ModelParser.prototype.lookupRange = function() {
-
-    var localctx = new LookupRangeContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 22, ModelParser.RULE_lookupRange);
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 193;
-        this.match(ModelParser.T__6);
-        this.state = 194;
-        this.lookupPoint();
-        this.state = 195;
-        this.match(ModelParser.Minus);
-        this.state = 196;
-        this.lookupPoint();
-        this.state = 197;
-        this.match(ModelParser.T__7);
-        this.state = 198;
-        this.match(ModelParser.T__4);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-
-function LookupPointListContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_lookupPointList;
-    return this;
-}
-
-LookupPointListContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-LookupPointListContext.prototype.constructor = LookupPointListContext;
-
-LookupPointListContext.prototype.lookupPoint = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(LookupPointContext);
-    } else {
-        return this.getTypedRuleContext(LookupPointContext,i);
-    }
-};
-
-LookupPointListContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLookupPointList(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.LookupPointListContext = LookupPointListContext;
-
-ModelParser.prototype.lookupPointList = function() {
-
-    var localctx = new LookupPointListContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 24, ModelParser.RULE_lookupPointList);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 200;
-        this.lookupPoint();
-        this.state = 205;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        while(_la===ModelParser.T__4) {
-            this.state = 201;
-            this.match(ModelParser.T__4);
-            this.state = 202;
-            this.lookupPoint();
-            this.state = 207;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_lookup;
     }
-    return localctx;
-};
+
+	lookupPointList() {
+	    return this.getTypedRuleContext(LookupPointListContext,0);
+	};
+
+	lookupRange() {
+	    return this.getTypedRuleContext(LookupRangeContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLookup(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
-function LookupPointContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_lookupPoint;
-    return this;
 }
 
-LookupPointContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-LookupPointContext.prototype.constructor = LookupPointContext;
-
-LookupPointContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
-
-LookupPointContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitLookupPoint(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
 
 
+class LookupRangeContext extends antlr4.ParserRuleContext {
 
-
-ModelParser.LookupPointContext = LookupPointContext;
-
-ModelParser.prototype.lookupPoint = function() {
-
-    var localctx = new LookupPointContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 26, ModelParser.RULE_lookupPoint);
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 208;
-        this.match(ModelParser.T__1);
-        this.state = 209;
-        this.expr(0);
-        this.state = 210;
-        this.match(ModelParser.T__4);
-        this.state = 211;
-        this.expr(0);
-        this.state = 212;
-        this.match(ModelParser.T__2);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-
-function ConstListContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = ModelParser.RULE_constList;
-    return this;
-}
-
-ConstListContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-ConstListContext.prototype.constructor = ConstListContext;
-
-ConstListContext.prototype.expr = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExprContext);
-    } else {
-        return this.getTypedRuleContext(ExprContext,i);
-    }
-};
-
-ConstListContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ModelVisitor ) {
-        return visitor.visitConstList(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-ModelParser.ConstListContext = ConstListContext;
-
-ModelParser.prototype.constList = function() {
-
-    var localctx = new ConstListContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 28, ModelParser.RULE_constList);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 234;
-        this._errHandler.sync(this);
-        var la_ = this._interp.adaptivePredict(this._input,25,this._ctx);
-        switch(la_) {
-        case 1:
-            this.state = 214;
-            this.expr(0);
-            this.state = 217; 
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-            do {
-                this.state = 215;
-                this.match(ModelParser.T__4);
-                this.state = 216;
-                this.expr(0);
-                this.state = 219; 
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-            } while(_la===ModelParser.T__4);
-            break;
-
-        case 2:
-            this.state = 230; 
-            this._errHandler.sync(this);
-            var _alt = 1;
-            do {
-            	switch (_alt) {
-            	case 1:
-            		this.state = 221;
-            		this.expr(0);
-            		this.state = 224; 
-            		this._errHandler.sync(this);
-            		_la = this._input.LA(1);
-            		do {
-            		    this.state = 222;
-            		    this.match(ModelParser.T__4);
-            		    this.state = 223;
-            		    this.expr(0);
-            		    this.state = 226; 
-            		    this._errHandler.sync(this);
-            		    _la = this._input.LA(1);
-            		} while(_la===ModelParser.T__4);
-            		this.state = 228;
-            		this.match(ModelParser.T__14);
-            		break;
-            	default:
-            		throw new antlr4.error.NoViableAltException(this);
-            	}
-            	this.state = 232; 
-            	this._errHandler.sync(this);
-            	_alt = this._interp.adaptivePredict(this._input,24, this._ctx);
-            } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
-            break;
-
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_lookupRange;
     }
-    return localctx;
-};
 
+	lookupPoint = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(LookupPointContext);
+	    } else {
+	        return this.getTypedRuleContext(LookupPointContext,i);
+	    }
+	};
 
-ModelParser.prototype.sempred = function(localctx, ruleIndex, predIndex) {
-	switch(ruleIndex) {
-	case 7:
-			return this.expr_sempred(localctx, predIndex);
-    default:
-        throw "No predicate with index:" + ruleIndex;
-   }
-};
+	Minus() {
+	    return this.getToken(ModelParser.Minus, 0);
+	};
 
-ModelParser.prototype.expr_sempred = function(localctx, predIndex) {
-	switch(predIndex) {
-		case 0:
-			return this.precpred(this._ctx, 12);
-		case 1:
-			return this.precpred(this._ctx, 11);
-		case 2:
-			return this.precpred(this._ctx, 10);
-		case 3:
-			return this.precpred(this._ctx, 9);
-		case 4:
-			return this.precpred(this._ctx, 8);
-		case 5:
-			return this.precpred(this._ctx, 7);
-		case 6:
-			return this.precpred(this._ctx, 6);
-		default:
-			throw "No predicate with index:" + predIndex;
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLookupRange(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
-};
 
 
-exports.ModelParser = ModelParser;
+}
+
+
+
+class LookupPointListContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_lookupPointList;
+    }
+
+	lookupPoint = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(LookupPointContext);
+	    } else {
+	        return this.getTypedRuleContext(LookupPointContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLookupPointList(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
+class LookupPointContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_lookupPoint;
+    }
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitLookupPoint(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
+class ConstListContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = ModelParser.RULE_constList;
+    }
+
+	expr = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExprContext);
+	    } else {
+	        return this.getTypedRuleContext(ExprContext,i);
+	    }
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof ModelVisitor ) {
+	        return visitor.visitConstList(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
+
+ModelParser.ModelContext = ModelContext; 
+ModelParser.SubscriptRangeContext = SubscriptRangeContext; 
+ModelParser.SubscriptSequenceContext = SubscriptSequenceContext; 
+ModelParser.SubscriptMappingListContext = SubscriptMappingListContext; 
+ModelParser.SubscriptMappingContext = SubscriptMappingContext; 
+ModelParser.EquationContext = EquationContext; 
+ModelParser.LhsContext = LhsContext; 
+ModelParser.ExprContext = ExprContext; 
+ModelParser.ExprListContext = ExprListContext; 
+ModelParser.SubscriptListContext = SubscriptListContext; 
+ModelParser.LookupContext = LookupContext; 
+ModelParser.LookupRangeContext = LookupRangeContext; 
+ModelParser.LookupPointListContext = LookupPointListContext; 
+ModelParser.LookupPointContext = LookupPointContext; 
+ModelParser.ConstListContext = ConstListContext; 
