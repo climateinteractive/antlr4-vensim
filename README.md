@@ -10,10 +10,10 @@ Install the package with npm in your project.
 npm install antlr4-vensim
 ```
 
-Require the lexer, parser, and/or visitor.
+Import the lexer, parser, and/or visitor.
 
 ```
-const { ModelLexer, ModelParser, ModelVisitor } = require('antlr4-vensim')
+import { ModelLexer, ModelParser, ModelVisitor } from 'antlr4-vensim'
 ```
 
 Refer to the [ANTLR 4 JavaScript](https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md) runtime documentation for further details about using the parser.
