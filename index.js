@@ -1,8 +1,7 @@
-const ModelLexer = require('./parser/ModelLexer').ModelLexer
-const ModelParser = require('./parser/ModelParser').ModelParser
-const ModelVisitor= require('./parser/ModelVisitor').ModelVisitor
-module.exports = {
-  ModelLexer,
-  ModelParser,
-  ModelVisitor
-}
+import ModelLexer from './parser/ModelLexer.js'
+import ModelParser from './parser/ModelParser.js'
+import ModelVisitor from './parser/ModelVisitor.js'
+
+export { ModelLexer as ModelLexer }
+export { ModelParser as ModelParser }
+export { ModelVisitor as ModelVisitor }

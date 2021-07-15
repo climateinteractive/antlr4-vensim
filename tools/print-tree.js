@@ -1,5 +1,5 @@
-const getStdin = require('get-stdin')
-const B = require('bufx')
+import getStdin from 'get-stdin'
+import B from 'bufx'
 
 // Print an ANTLR 4 parse tree from stdin.
 getStdin().then(tree => {
