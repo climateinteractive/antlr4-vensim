@@ -1,6 +1,7 @@
 node_modules/
 npm-debug.log
 java/
+grammar/.antlr/
 *.interp
 ~*
 .DS_Store
