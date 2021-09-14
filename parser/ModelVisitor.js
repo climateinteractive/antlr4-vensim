@@ -36,6 +36,12 @@ export default class ModelVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by ModelParser#unitsDoc.
+	visitUnitsDoc(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by ModelParser#equation.
 	visitEquation(ctx) {
 	  return this.visitChildren(ctx);
