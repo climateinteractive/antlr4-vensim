@@ -5,7 +5,7 @@ import Expr;
 model: ( subscriptRange | equation )+ ;
 
 // A subscript range definition names subscripts in a dimension.
-subscriptRange : ( ( Id ':' ( subscriptList | subscriptSequence | expr ) subscriptMappingList? ) | ( Id '<->' Id ) ) unitsDoc* ;
+subscriptRange : ( ( Id ':' ( subscriptList | subscriptSequence | expr ) subscriptMappingList? ) | ( Id '<->' Id ) ) '|' ;
 subscriptSequence : '(' Id '-' Id ')' ;
 subscriptMappingList : '->' subscriptMapping ( ',' subscriptMapping )* ;
 subscriptMapping : Id | '(' Id ':' subscriptList ')' ;
@@ -13,8 +13,7 @@ subscriptMapping : Id | '(' Id ':' subscriptList ')' ;
 // An equation has a left-hand side and a right-hand side.
 // The RHS is a formula expression, a constant list, or a Vensim lookup.
 // The RHS is empty for data equations.
-unitsDoc : '~' .*? '|' ;
-equation : lhs ( ( ':=' | '==' | '=' ) ( expr | constList ) | lookup )? unitsDoc* ;
+equation : lhs ( ( ':=' | '==' | '=' ) ( expr | constList ) | lookup )? '|' ;
 lhs : Id ( '[' subscriptList ']' )? ':INTERPOLATE:'? ( ':EXCEPT:' '[' subscriptList ']' ( ',' '[' subscriptList ']' )* )? ;
 
 // The lexer strips some tokens we are not interested in.
@@ -23,3 +22,4 @@ lhs : Id ( '[' subscriptList ']' )? ':INTERPOLATE:'? ( ':EXCEPT:' '[' subscriptL
 // Line continuation characters and the sketch must be stripped by a preprocessor.
 Encoding : '{' [A-Za-z0-9-]+ '}' -> skip ;
 Group : '****' .*? '|' -> skip ;
+UnitsDoc : '~' ~'|'* -> skip ;
