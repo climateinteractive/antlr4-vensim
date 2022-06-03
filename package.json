@@ -1,6 +1,6 @@
 {
   "name": "antlr4-vensim",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "type": "module",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
