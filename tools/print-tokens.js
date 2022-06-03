@@ -1,5 +1,5 @@
-const getStdin = require('get-stdin')
-const { pr, lines } = require('bufx')
+import getStdin from 'get-stdin'
+import { pr, lines } from 'bufx'
 
 // Print an ANTLR 4 lex listing from stdin.
 let readToken = token => {

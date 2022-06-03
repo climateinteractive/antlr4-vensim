@@ -2,16 +2,18 @@
 
 ## Using the parser
 
+Install Node 14 or later. ANTLR 4 now requires Node 14+ for ES module support.
+
 Install the package with npm in your project.
 
 ```
 npm install antlr4-vensim
 ```
 
-Require the lexer, parser, and/or visitor.
+Import the lexer, parser, and/or visitor.
 
 ```
-const { ModelLexer, ModelParser, ModelVisitor } = require('antlr4-vensim')
+import { ModelLexer, ModelParser, ModelVisitor } from 'antlr4-vensim'
 ```
 
 Refer to the [ANTLR 4 JavaScript](https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md) runtime documentation for further details about using the parser.
@@ -22,19 +24,21 @@ The grammar development tools in this package require macOS. They are not requir
 
 Vensim grammar development uses the [ANTLR 4](http://www.antlr.org/) parser generator.
 
+Install Node 14 or later. ANTLR 4 now requires Node 14+ for ES module support.
+
 Install the latest [Java SE JDK](https://www.oracle.com/java/technologies/javase-downloads.html). We are only using Java for development purposes, which is [covered](https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html) by the license for Java SE.
 
-Install ANTLR 4 Java tools version 4.8.
+Install ANTLR 4 Java tools version 4.9.2.
 
 ```
 cd /usr/local/lib
-sudo curl -O https://www.antlr.org/download/antlr-4.8-complete.jar
+sudo curl -O https://www.antlr.org/download/antlr-4.9.2-complete.jar
 ```
 
 Set up ANTLR 4 in `.bash_profile`.
 
 ```
-export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
+export CLASSPATH=".:/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH"
 ```
 
 ## Developing the parser
