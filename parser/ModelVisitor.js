@@ -1,4 +1,4 @@
-// Generated from grammar/Model.g4 by ANTLR 4.9.2
+// Generated from grammar/Model.g4 by ANTLR 4.12.0
 // jshint ignore: start
 import antlr4 from 'antlr4';
 
