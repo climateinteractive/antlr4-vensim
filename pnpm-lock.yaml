@@ -10,8 +10,8 @@ devDependencies:
     specifier: ^1.0.5
     version: 1.0.5
   get-stdin:
-    specifier: ^6.0.0
-    version: 6.0.0
+    specifier: ^9.0.0
+    version: 9.0.0
 
 packages:
 
@@ -41,9 +41,9 @@ packages:
     hasBin: true
     dev: true
 
-  /get-stdin@6.0.0:
-    resolution: {integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==}
-    engines: {node: '>=4'}
+  /get-stdin@9.0.0:
+    resolution: {integrity: sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA==}
+    engines: {node: '>=12'}
     dev: true
 
   /js-yaml@3.14.1:

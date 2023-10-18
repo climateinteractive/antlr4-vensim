@@ -1,6 +1,6 @@
 {
   "name": "antlr4-vensim",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "type": "module",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "bufx": "^1.0.5",
-    "get-stdin": "^6.0.0"
+    "get-stdin": "^9.0.0"
   }
 }
