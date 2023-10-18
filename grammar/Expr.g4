@@ -20,8 +20,7 @@ expr:   Id '(' exprList? ')'              # Call
     ;
 
 exprList : expr (',' expr)* ;
-subscriptSequence : '(' Id '-' Id ')' ;
-subscriptList : Id (',' ( Id | subscriptSequence ) )* ;
+subscriptList : Id (',' Id)* ;
 lookup : '(' lookupRange? lookupPointList ')' ;
 lookupRange : '[' lookupPoint '-' lookupPoint ']' ',' ;
 lookupPointList : lookupPoint (',' lookupPoint)* ;

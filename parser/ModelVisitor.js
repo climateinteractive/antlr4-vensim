@@ -18,6 +18,18 @@ export default class ModelVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by ModelParser#subscriptDefList.
+	visitSubscriptDefList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by ModelParser#subscriptSequence.
+	visitSubscriptSequence(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by ModelParser#subscriptMappingList.
 	visitSubscriptMappingList(ctx) {
 	  return this.visitChildren(ctx);
@@ -146,12 +158,6 @@ export default class ModelVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by ModelParser#exprList.
 	visitExprList(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by ModelParser#subscriptSequence.
-	visitSubscriptSequence(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

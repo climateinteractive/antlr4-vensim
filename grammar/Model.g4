@@ -5,7 +5,9 @@ import Expr;
 model: ( subscriptRange | equation )+ ;
 
 // A subscript range definition names subscripts in a dimension.
-subscriptRange : ( ( Id ':' ( subscriptList | subscriptSequence | expr ) subscriptMappingList? ) | ( Id '<->' Id ) ) '|' ;
+subscriptRange : ( ( Id ':' ( subscriptDefList | expr ) subscriptMappingList? ) | ( Id '<->' Id ) ) '|' ;
+subscriptDefList : ( Id | subscriptSequence ) ( ',' ( Id | subscriptSequence ) )* ;
+subscriptSequence : '(' Id '-' Id ')' ;
 subscriptMappingList : '->' subscriptMapping ( ',' subscriptMapping )* ;
 subscriptMapping : Id | '(' Id ':' subscriptList ')' ;
 
