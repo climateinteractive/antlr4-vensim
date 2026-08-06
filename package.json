@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Vensim grammar built in ANTLR 4",
   "scripts": {
-    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.12.0-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4"
+    "build": "rm -rf parser && java -jar /usr/local/lib/antlr-4.12.0-complete.jar -Dlanguage=JavaScript -visitor -no-listener -Xexact-output-dir -o parser grammar/Model.g4",
+    "test": "vitest run"
   },
   "main": "index.js",
   "author": "Climate Interactive",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "bufx": "^1.0.5",
-    "get-stdin": "^9.0.0"
+    "get-stdin": "^9.0.0",
+    "vitest": "^4.1.10"
   }
 }

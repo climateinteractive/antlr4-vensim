@@ -58,6 +58,16 @@ ModelParser.js
 ModelVisitor.js
 ```
 
+## Running the tests
+
+The tests run against the generated parser in the `parser` directory, so run `pnpm build` first if you have changed the grammar.
+
+```
+pnpm test
+```
+
+The tests in `tests/expr-precedence.test.js` pin down operator grouping in the `expr` rule. Precedence there comes from the order of the alternatives in `grammar/Expr.g4`, so reordering them changes how expressions evaluate without causing a parse error.
+
 ## Command line utility
 
 The `a4` script generates and runs a lexer and parser in Java. It is useful in development when you are trying to understand how the lexer is tokenizing your model and what parse tree the parser is generating.
