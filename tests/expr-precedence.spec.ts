@@ -50,7 +50,7 @@ describe('power binds tighter than the binary operators', () => {
 
 describe('unary sign against the binary operators', () => {
   // Unary sign still outranks * and /, so these groupings are unchanged by the
-  // power precedence fix.
+  // power precedence fix
   it('applies unary - before *', () => {
     expect(parseExpr('-x*y')).toBe('((-x)*y)')
   })
@@ -64,7 +64,7 @@ describe('unary sign against the binary operators', () => {
 
 describe('associativity', () => {
   it('groups ^ to the left', () => {
-    // Left associative, so 2^3^2 is (2^3)^2 = 64, not 2^(3^2) = 512.
+    // Left associative, so 2^3^2 is (2^3)^2 = 64, not 2^(3^2) = 512
     expect(parseExpr('2^3^2')).toBe('((2^3)^2)')
   })
   it('groups * and / to the left', () => {
