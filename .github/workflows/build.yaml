@@ -1,0 +1,71 @@
+#
+# Installs dependencies and runs the tests on Linux.
+#
+# This runs after changes are pushed to a feature branch.  It does not
+# run for pushes to the main branch because that is covered by the
+# `release` workflow.
+#
+# Note that this does not run the `build` script (which regenerates the
+# parser using the ANTLR tool); the generated parser is checked in, and
+# regenerating it requires a local Java + ANTLR installation.
+#
+
+name: Build
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+
+jobs:
+  # The `build` job installs dependencies and runs the tests
+  build:
+    # We want to avoid redundant builds in the more common case where this workflow is running
+    # on a branch in the main antlr4-vensim repository.  For that case, we only care about "push"
+    # events.  The "pull_request" events are only useful for contributions from external forks.
+    # Currently there is no way to detect or filter out forks in the `on: pull_request:` section
+    # above, so we use the following logic to filter at the job level.  Only run the job if:
+    #   - this is a "push" event for a branch in the main repository, OR
+    #   - this is a "pull_request" event for an external fork
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+
+      # The pnpm caching strategy in the following steps is based on:
+      #   https://github.com/pnpm/action-setup#use-cache-to-reduce-installation-time
+      - name: Install pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: 10
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Enable pnpm cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-store-${{ runner.os }}-
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          pnpm install --frozen-lockfile
+
+      - name: Run tests
+        shell: bash
+        run: |
+          pnpm test

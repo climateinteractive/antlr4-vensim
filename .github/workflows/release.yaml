@@ -1,0 +1,76 @@
+#
+# This runs after changes are merged to `main`.  There are two scenarios:
+#   1. The commit was from a feature branch being merged.  In this case,
+#      release-please will create/update a release PR to include the commit.
+#   2. The commit was from a release-please PR being merged.  In this case,
+#      the release will be tagged and the publish steps will be taken.
+#
+
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Run release-please
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        id: release
+        with:
+          # Note that we need to use a custom token here because events triggered
+          # by the special `GITHUB_TOKEN` will not create a new workflow run (to
+          # avoid creating recursive workflow runs).  In our case, we want this
+          # release-please action to trigger the `build` workflow when it pushes
+          # to a `release-please` branch; using a custom token here makes it work.
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+
+      - name: Check out repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+
+      # The pnpm caching strategy in the following steps is based on:
+      #   https://github.com/pnpm/action-setup#use-cache-to-reduce-installation-time
+      - name: Install pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: 10
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Enable pnpm cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-store-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile
+
+      - name: Run tests
+        run: |
+          pnpm test
+
+      # Save the npmjs auth token so that the workflow can publish the package to the registry
+      - name: Configure npm auth token
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+
+      - name: Publish package
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        run: |
+          pnpm publish --access public --no-git-checks
