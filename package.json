@@ -8,6 +8,12 @@
     "test": "vitest run"
   },
   "main": "index.js",
+  "files": [
+    "index.js",
+    "grammar",
+    "parser/*.js",
+    "parser/*.tokens"
+  ],
   "author": "Climate Interactive",
   "license": "MIT",
   "repository": {
