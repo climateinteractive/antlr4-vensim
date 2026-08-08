@@ -2,51 +2,51 @@ import { describe, expect, it } from 'vitest'
 
 import { parseExpr } from './parse-expr.js'
 
-// // These tests pin down operator grouping in the expr rule.  Precedence in an
-// // ANTLR left-recursive rule comes from the order of the alternatives, so
-// // reordering them in Expr.g4 silently changes how expressions evaluate.  A
-// // wrong grouping still parses, which is why it needs a test rather than a
-// // parse failure to catch it.
-// describe('power binds tighter than unary sign', () => {
-//   it('applies ^ before a leading -', () => {
-//     expect(parseExpr('-x^2')).toBe('(-(x^2))')
-//   })
-//   it('applies ^ before a leading +', () => {
-//     expect(parseExpr('+x^2')).toBe('(+(x^2))')
-//   })
-//   it('negates the power, not the base, in a Gaussian', () => {
-//     // The case that motivated the fix.  Grouping this as ((-x)^2)/2 drops the
-//     // sign of the exponent, turning a decaying curve into a growing one.
-//     expect(parseExpr('EXP(-x^2/2)')).toBe('EXP(((-(x^2))/2))')
-//   })
-//   it('negates the power of a constant base', () => {
-//     expect(parseExpr('-2^2')).toBe('(-(2^2))')
-//   })
-//   it('still allows a negated exponent', () => {
-//     expect(parseExpr('x^-2')).toBe('(x^(-2))')
-//   })
-//   it('still allows a negated base when parenthesized', () => {
-//     expect(parseExpr('(-x)^2')).toBe('((-x)^2)')
-//   })
-// })
+// These tests pin down operator grouping in the expr rule.  Precedence in an
+// ANTLR left-recursive rule comes from the order of the alternatives, so
+// reordering them in Expr.g4 silently changes how expressions evaluate.  A
+// wrong grouping still parses, which is why it needs a test rather than a
+// parse failure to catch it.
+describe('power binds tighter than unary sign', () => {
+  it('applies ^ before a leading -', () => {
+    expect(parseExpr('-x^2')).toBe('(-(x^2))')
+  })
+  it('applies ^ before a leading +', () => {
+    expect(parseExpr('+x^2')).toBe('(+(x^2))')
+  })
+  it('negates the power, not the base, in a Gaussian', () => {
+    // The case that motivated the fix.  Grouping this as ((-x)^2)/2 drops the
+    // sign of the exponent, turning a decaying curve into a growing one.
+    expect(parseExpr('EXP(-x^2/2)')).toBe('EXP(((-(x^2))/2))')
+  })
+  it('negates the power of a constant base', () => {
+    expect(parseExpr('-2^2')).toBe('(-(2^2))')
+  })
+  it('still allows a negated exponent', () => {
+    expect(parseExpr('x^-2')).toBe('(x^(-2))')
+  })
+  it('still allows a negated base when parenthesized', () => {
+    expect(parseExpr('(-x)^2')).toBe('((-x)^2)')
+  })
+})
 
-// describe('power binds tighter than the binary operators', () => {
-//   it('applies ^ before *', () => {
-//     expect(parseExpr('x^2*y')).toBe('((x^2)*y)')
-//   })
-//   it('applies ^ before /', () => {
-//     expect(parseExpr('x^2/y')).toBe('((x^2)/y)')
-//   })
-//   it('applies ^ before +', () => {
-//     expect(parseExpr('x^2+y')).toBe('((x^2)+y)')
-//   })
-//   it('applies ^ before - used as subtraction', () => {
-//     expect(parseExpr('x-y^2')).toBe('(x-(y^2))')
-//   })
-//   it('groups a negated power against a following factor', () => {
-//     expect(parseExpr('-x^2*y')).toBe('((-(x^2))*y)')
-//   })
-// })
+describe('power binds tighter than the binary operators', () => {
+  it('applies ^ before *', () => {
+    expect(parseExpr('x^2*y')).toBe('((x^2)*y)')
+  })
+  it('applies ^ before /', () => {
+    expect(parseExpr('x^2/y')).toBe('((x^2)/y)')
+  })
+  it('applies ^ before +', () => {
+    expect(parseExpr('x^2+y')).toBe('((x^2)+y)')
+  })
+  it('applies ^ before - used as subtraction', () => {
+    expect(parseExpr('x-y^2')).toBe('(x-(y^2))')
+  })
+  it('groups a negated power against a following factor', () => {
+    expect(parseExpr('-x^2*y')).toBe('((-(x^2))*y)')
+  })
+})
 
 describe('unary sign against the binary operators', () => {
   // Unary sign still outranks * and /, so these groupings are unchanged by the

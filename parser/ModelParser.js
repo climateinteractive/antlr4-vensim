@@ -54,14 +54,14 @@ const serializedATN = [4,1,38,262,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
 0,0,136,141,5,33,0,0,137,138,5,9,0,0,138,139,3,20,10,0,139,140,5,10,0,0,
 140,142,1,0,0,0,141,137,1,0,0,0,141,142,1,0,0,0,142,143,1,0,0,0,143,144,
 5,5,0,0,144,145,3,16,8,0,145,146,5,6,0,0,146,168,1,0,0,0,147,148,5,13,0,
-0,148,168,3,16,8,15,149,150,5,24,0,0,150,168,3,16,8,14,151,152,5,23,0,0,
-152,168,3,16,8,13,153,158,5,33,0,0,154,155,5,9,0,0,155,156,3,20,10,0,156,
+0,148,168,3,16,8,15,149,150,5,24,0,0,150,168,3,16,8,13,151,152,5,23,0,0,
+152,168,3,16,8,12,153,158,5,33,0,0,154,155,5,9,0,0,155,156,3,20,10,0,156,
 157,5,10,0,0,157,159,1,0,0,0,158,154,1,0,0,0,158,159,1,0,0,0,159,168,1,0,
 0,0,160,168,5,34,0,0,161,168,5,37,0,0,162,168,3,22,11,0,163,164,5,5,0,0,
 164,165,3,16,8,0,165,166,5,6,0,0,166,168,1,0,0,0,167,129,1,0,0,0,167,136,
 1,0,0,0,167,147,1,0,0,0,167,149,1,0,0,0,167,151,1,0,0,0,167,153,1,0,0,0,
 167,160,1,0,0,0,167,161,1,0,0,0,167,162,1,0,0,0,167,163,1,0,0,0,168,192,
-1,0,0,0,169,170,10,12,0,0,170,171,5,14,0,0,171,191,3,16,8,13,172,173,10,
+1,0,0,0,169,170,10,14,0,0,170,171,5,14,0,0,171,191,3,16,8,15,172,173,10,
 11,0,0,173,174,7,1,0,0,174,191,3,16,8,12,175,176,10,10,0,0,176,177,7,2,0,
 0,177,191,3,16,8,11,178,179,10,9,0,0,179,180,7,3,0,0,180,191,3,16,8,10,181,
 182,10,8,0,0,182,183,7,4,0,0,183,191,3,16,8,9,184,185,10,7,0,0,185,186,5,
@@ -138,7 +138,7 @@ export default class ModelParser extends antlr4.Parser {
     expr_sempred(localctx, predIndex) {
     	switch(predIndex) {
     		case 0:
-    			return this.precpred(this._ctx, 12);
+    			return this.precpred(this._ctx, 14);
     		case 1:
     			return this.precpred(this._ctx, 11);
     		case 2:
@@ -665,7 +665,7 @@ export default class ModelParser extends antlr4.Parser {
 	            this.state = 149;
 	            this.match(ModelParser.Minus);
 	            this.state = 150;
-	            this.expr(14);
+	            this.expr(13);
 	            break;
 
 	        case 5:
@@ -675,7 +675,7 @@ export default class ModelParser extends antlr4.Parser {
 	            this.state = 151;
 	            this.match(ModelParser.Plus);
 	            this.state = 152;
-	            this.expr(13);
+	            this.expr(12);
 	            break;
 
 	        case 6:
@@ -753,13 +753,13 @@ export default class ModelParser extends antlr4.Parser {
 	                    localctx = new PowerContext(this, new ExprContext(this, _parentctx, _parentState));
 	                    this.pushNewRecursionContext(localctx, _startState, ModelParser.RULE_expr);
 	                    this.state = 169;
-	                    if (!( this.precpred(this._ctx, 12))) {
-	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 12)");
+	                    if (!( this.precpred(this._ctx, 14))) {
+	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 14)");
 	                    }
 	                    this.state = 170;
 	                    this.match(ModelParser.T__13);
 	                    this.state = 171;
-	                    this.expr(13);
+	                    this.expr(15);
 	                    break;
 
 	                case 2:
