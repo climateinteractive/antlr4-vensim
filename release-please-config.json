@@ -3,6 +3,10 @@
     ".": {}
   },
   "release-type": "node",
+  "//include-v-in-tag": "The releases predating release-please are tagged without a `v` prefix (e.g. `0.6.3`), so keep that convention.",
+  "include-v-in-tag": false,
+  "//last-release-sha": "0.6.3 was released at this commit; everything at or before it is already published, so release-please must not pull those commits into a new changelog.",
+  "last-release-sha": "23e19a63bdb173a20d1f6c7cb1098392b70c3044",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
   "pull-request-title-pattern": "chore: release ${version}",

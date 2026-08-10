@@ -3,9 +3,9 @@ grammar Expr;
 expr:   Id '(' exprList? ')'              # Call
     |   Id ('[' subscriptList ']')? '(' expr ')' # LookupCall
     |   ':NOT:' expr                      # Not
+    |   expr '^' expr                     # Power
     |   '-' expr                          # Negative
     |   '+' expr                          # Positive
-    |   expr '^' expr                     # Power
     |   expr op=('*'|'/') expr            # MulDiv
     |   expr op=('+'|'-') expr            # AddSub
     |   expr op=('<'|'>'|'<='|'>=') expr  # Relational
