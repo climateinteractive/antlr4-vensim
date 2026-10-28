@@ -22,7 +22,10 @@ expr:   Id '(' exprList? ')'              # Call
 exprList : expr (',' expr)* ;
 subscriptList : Id (',' Id)* ;
 lookup : '(' lookupRange? lookupPointList ')' ;
-lookupRange : '[' lookupPoint '-' lookupPoint ']' ',' ;
+// The range can be followed by optional reference line points, which Vensim uses only
+// to draw reference lines in the Graph Lookup Editor; see:
+//   https://www.vensim.com/documentation/lookups.html
+lookupRange : '[' minPoint=lookupPoint '-' maxPoint=lookupPoint ( ',' refPoints+=lookupPoint )* ']' ',' ;
 lookupPointList : lookupPoint (',' lookupPoint)* ;
 lookupPoint : '(' expr ',' expr ')' ;
 constList : ( expr ( ',' expr )+ | ( expr ( ',' expr )+ ';' )+ ) ;

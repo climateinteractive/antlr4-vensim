@@ -68,6 +68,8 @@ pnpm test
 
 The tests in `tests/expr-precedence.test.js` pin down operator grouping in the `expr` rule. Precedence there comes from the order of the alternatives in `grammar/Expr.g4`, so reordering them changes how expressions evaluate without causing a parse error.
 
+The tests in `tests/lookup-range.spec.ts` cover the optional range and reference line points at the start of a lookup definition. The parse tree exposes the parts of the range with the `minPoint`, `maxPoint`, and `refPoints` labels on `LookupRangeContext`.
+
 ## Command line utility
 
 The `a4` script generates and runs a lexer and parser in Java. It is useful in development when you are trying to understand how the lexer is tokenizing your model and what parse tree the parser is generating.
