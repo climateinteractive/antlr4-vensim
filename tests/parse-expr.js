@@ -4,11 +4,15 @@ import ModelLexer from '../parser/ModelLexer.js'
 import ModelParser from '../parser/ModelParser.js'
 import ModelVisitor from '../parser/ModelVisitor.js'
 
-// Render an expression parse tree as a fully parenthesized infix string.
-// Every operator application gets its own parentheses, so the string shows
-// exactly how the parser grouped the operands.  This makes precedence and
-// associativity visible in test expectations:
-//   '-x^2/2' -> '((-(x^2))/2)'
+/**
+ * Render an expression parse tree as a fully parenthesized infix string.
+ * Every operator application gets its own parentheses, so the string shows
+ * exactly how the parser grouped the operands.  This makes precedence and
+ * associativity visible in test expectations.
+ *
+ * @example
+ * // '-x^2/2' is rendered as '((-(x^2))/2)'
+ */
 class InfixVisitor extends ModelVisitor {
   visitParens(ctx) {
     // The grouping is already explicit in the output, so drop the source parens.
@@ -64,8 +68,10 @@ class InfixVisitor extends ModelVisitor {
   }
 }
 
-// Collect syntax errors instead of writing them to the console, so that a test
-// asserting on a malformed expression fails with the parser's own message.
+/**
+ * Collect syntax errors instead of writing them to the console, so that a test
+ * asserting on a malformed expression fails with the parser's own message.
+ */
 class ErrorCollector extends antlr4.error.ErrorListener {
   constructor() {
     super()
@@ -76,8 +82,16 @@ class ErrorCollector extends antlr4.error.ErrorListener {
   }
 }
 
-// Parse a Vensim expression and return it as a fully parenthesized infix string.
-// Throws if the expression does not parse cleanly.
+/**
+ * Parse a Vensim expression and return it as a fully parenthesized infix string.
+ *
+ * @example
+ * parseExpr('-x^2/2') // '((-(x^2))/2)'
+ *
+ * @param {string} text The expression to parse.
+ * @returns {string} The fully parenthesized infix string.
+ * @throws {Error} If the expression does not parse cleanly and completely.
+ */
 export function parseExpr(text) {
   let chars = new antlr4.InputStream(text)
   let lexer = new ModelLexer(chars)
